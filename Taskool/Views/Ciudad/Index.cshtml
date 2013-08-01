@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Taskool.Models.Ciudad>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="twelve">
+    <thead>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nombreCiudad)
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombreCiudad)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.id }, new { @class = "button" }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }, new { @class = "button" }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id }, new { @class = "button" })
+        </td>
+    </tr>
+}
+        </tbody>
+
+</table>

@@ -1,0 +1,1245 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TareasModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="TareasModelStoreContainer">
+    <EntitySet Name="Asignacion" EntityType="TareasModel.Store.Asignacion" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Asignacion_Archivo" EntityType="TareasModel.Store.Asignacion_Archivo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Asignatura" EntityType="TareasModel.Store.Asignatura" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Calendario" EntityType="TareasModel.Store.Calendario" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Categoria" EntityType="TareasModel.Store.Categoria" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Ciudad" EntityType="TareasModel.Store.Ciudad" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Comunicado" EntityType="TareasModel.Store.Comunicado" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Grado" EntityType="TareasModel.Store.Grado" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="GradoN" EntityType="TareasModel.Store.GradoN" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Grupo" EntityType="TareasModel.Store.Grupo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Grupo_Evaluacion" EntityType="TareasModel.Store.Grupo_Evaluacion" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Grupo_Restriccion" EntityType="TareasModel.Store.Grupo_Restriccion" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Institucion" EntityType="TareasModel.Store.Institucion" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Perfil" EntityType="TareasModel.Store.Perfil" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tipo_Restriccion" EntityType="TareasModel.Store.Tipo_Restriccion" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TipoAsignacion" EntityType="TareasModel.Store.TipoAsignacion" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Usuario" EntityType="TareasModel.Store.Usuario" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Usuario_Grupo" EntityType="TareasModel.Store.Usuario_Grupo" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Asignacion_Archivo_Asignacion" Association="TareasModel.Store.FK_Asignacion_Archivo_Asignacion">
+      <End Role="Asignacion" EntitySet="Asignacion" />
+      <End Role="Asignacion_Archivo" EntitySet="Asignacion_Archivo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Asignacion_Grupo" Association="TareasModel.Store.FK_Asignacion_Grupo">
+      <End Role="Grupo" EntitySet="Grupo" />
+      <End Role="Asignacion" EntitySet="Asignacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Asignacion_TipoAsignacion" Association="TareasModel.Store.FK_Asignacion_TipoAsignacion">
+      <End Role="TipoAsignacion" EntitySet="TipoAsignacion" />
+      <End Role="Asignacion" EntitySet="Asignacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Asignacion_Usuario" Association="TareasModel.Store.FK_Asignacion_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Asignacion" EntitySet="Asignacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Grado_Categoria" Association="TareasModel.Store.FK_Grado_Categoria">
+      <End Role="Categoria" EntitySet="Categoria" />
+      <End Role="Grado" EntitySet="Grado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Institucion_Ciudad" Association="TareasModel.Store.FK_Institucion_Ciudad">
+      <End Role="Ciudad" EntitySet="Ciudad" />
+      <End Role="Institucion" EntitySet="Institucion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comunicado_Grupo" Association="TareasModel.Store.FK_Comunicado_Grupo">
+      <End Role="Grupo" EntitySet="Grupo" />
+      <End Role="Comunicado" EntitySet="Comunicado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comunicado_Usuario" Association="TareasModel.Store.FK_Comunicado_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Comunicado" EntitySet="Comunicado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Grupo_Grado" Association="TareasModel.Store.FK_Grupo_Grado">
+      <End Role="Grado" EntitySet="Grado" />
+      <End Role="Grupo" EntitySet="Grupo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Grupo_GradoN" Association="TareasModel.Store.FK_Grupo_GradoN">
+      <End Role="GradoN" EntitySet="GradoN" />
+      <End Role="Grupo" EntitySet="Grupo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Grupo_Evaluacion_Grupo" Association="TareasModel.Store.FK_Grupo_Evaluacion_Grupo">
+      <End Role="Grupo" EntitySet="Grupo" />
+      <End Role="Grupo_Evaluacion" EntitySet="Grupo_Evaluacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Grupo_Institucion" Association="TareasModel.Store.FK_Grupo_Institucion">
+      <End Role="Institucion" EntitySet="Institucion" />
+      <End Role="Grupo" EntitySet="Grupo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Grupo_Restriccion_Grupo" Association="TareasModel.Store.FK_Grupo_Restriccion_Grupo">
+      <End Role="Grupo" EntitySet="Grupo" />
+      <End Role="Grupo_Restriccion" EntitySet="Grupo_Restriccion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Grupo_Restriccion_Tipo_Restriccion" Association="TareasModel.Store.FK_Grupo_Restriccion_Tipo_Restriccion">
+      <End Role="Tipo_Restriccion" EntitySet="Tipo_Restriccion" />
+      <End Role="Grupo_Restriccion" EntitySet="Grupo_Restriccion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Grupo_Restriccion_TipoAsignacion" Association="TareasModel.Store.FK_Grupo_Restriccion_TipoAsignacion">
+      <End Role="TipoAsignacion" EntitySet="TipoAsignacion" />
+      <End Role="Grupo_Restriccion" EntitySet="Grupo_Restriccion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuario_Institucion" Association="TareasModel.Store.FK_Usuario_Institucion">
+      <End Role="Institucion" EntitySet="Institucion" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuario_Perfil" Association="TareasModel.Store.FK_Usuario_Perfil">
+      <End Role="Perfil" EntitySet="Perfil" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuario_Grupo_Grupo" Association="TareasModel.Store.FK_Usuario_Grupo_Grupo">
+      <End Role="Grupo" EntitySet="Grupo" />
+      <End Role="Usuario_Grupo" EntitySet="Usuario_Grupo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuario_Grupo_Usuario" Association="TareasModel.Store.FK_Usuario_Grupo_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Usuario_Grupo" EntitySet="Usuario_Grupo" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Asignacion">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idGrupo" Type="int" Nullable="false" />
+    <Property Name="idUsuarioAsignacion" Type="int" Nullable="false" />
+    <Property Name="titulo" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="detalle" Type="varchar" Nullable="true" MaxLength="2000" />
+    <Property Name="idAsignatura" Type="int" Nullable="false" />
+    <Property Name="fechaAsignacion" Type="datetime" Nullable="false" />
+    <Property Name="fechaEntrega" Type="datetime" Nullable="false" />
+    <Property Name="idTipoAsignacion" Type="smallint" Nullable="false" />
+    <Property Name="fechaRegistro" Type="datetime" Nullable="false" />
+    <Property Name="estadoAsignacion" Type="tinyint" Nullable="false" />
+    <Property Name="fechaModificacion" Type="datetime" Nullable="true" />
+    <Property Name="fechaEliminacion" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Asignacion_Archivo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idAsignacion" Type="int" Nullable="false" />
+    <Property Name="nombreArchivo" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="pathArchivo" Type="varchar" Nullable="false" MaxLength="300" />
+    <Property Name="numDescargas" Type="int" Nullable="false" />
+    <Property Name="fechaRegistro" Type="datetime" Nullable="false" />
+    <Property Name="estadoArchivo" Type="tinyint" Nullable="false" />
+    <Property Name="fechaEliminacion" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Asignatura">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombreAsignatura" Type="varchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Calendario">
+    <Key>
+      <PropertyRef Name="fecha" />
+    </Key>
+    <Property Name="fecha" Type="datetime" Nullable="false" />
+    <Property Name="tipoDia" Type="varchar" Nullable="false" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="Categoria">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombreCategoria" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Ciudad">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombreCiudad" Type="varchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Comunicado">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idUsuarioComunicado" Type="int" Nullable="false" />
+    <Property Name="idGrupo" Type="int" Nullable="false" />
+    <Property Name="fechaComunicado" Type="datetime" Nullable="false" />
+    <Property Name="fechaVigencia" Type="datetime" Nullable="false" />
+    <Property Name="titulo" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="urlImagen" Type="varchar" Nullable="true" MaxLength="300" />
+    <Property Name="url1" Type="varchar" Nullable="true" MaxLength="300" />
+    <Property Name="url2" Type="varchar" Nullable="true" MaxLength="300" />
+    <Property Name="detalle" Type="varchar" Nullable="true" MaxLength="2000" />
+    <Property Name="estadoComunicado" Type="tinyint" Nullable="false" />
+    <Property Name="fechaRegistro" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Grado">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombreGrado" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="idCategoria" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GradoN">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombreGradoN" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Grupo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idInstitucion" Type="int" Nullable="false" />
+    <Property Name="idGrado" Type="int" Nullable="false" />
+    <Property Name="idGradoN" Type="int" Nullable="false" />
+    <Property Name="estadoGrupo" Type="tinyint" Nullable="false" />
+    <Property Name="urlImagen" Type="varchar" Nullable="true" MaxLength="300" />
+    <Property Name="ordenCategoria" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Grupo_Evaluacion">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idGrupo" Type="int" Nullable="false" />
+    <Property Name="fechaInicial" Type="datetime" Nullable="false" />
+    <Property Name="fechaFinal" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Grupo_Restriccion">
+    <Key>
+      <PropertyRef Name="idGrupo" />
+      <PropertyRef Name="idTipoAsignacion" />
+      <PropertyRef Name="idTipoRestriccion" />
+    </Key>
+    <Property Name="idGrupo" Type="int" Nullable="false" />
+    <Property Name="idTipoAsignacion" Type="smallint" Nullable="false" />
+    <Property Name="idTipoRestriccion" Type="smallint" Nullable="false" />
+    <Property Name="numMaximoDia" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Institucion">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nit" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="razonSocial" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="direccion" Type="varchar" Nullable="true" MaxLength="100" />
+    <Property Name="telefono1" Type="varchar" Nullable="true" MaxLength="30" />
+    <Property Name="telefono2" Type="varchar" Nullable="true" MaxLength="30" />
+    <Property Name="idCiudad" Type="int" Nullable="false" />
+    <Property Name="estadoInstitucion" Type="tinyint" Nullable="false" />
+    <Property Name="fechaRegistro" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Perfil">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="tinyint" Nullable="false" />
+    <Property Name="nombrePerfil" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Tipo_Restriccion">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombreTipoRestriccion" Type="varchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="TipoAsignacion">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="smallint" Nullable="false" />
+    <Property Name="nombreTipoAsignacion" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="numMaximoDia" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idInstitucion" Type="int" Nullable="false" />
+    <Property Name="nombreUsuario" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="idPerfil" Type="tinyint" Nullable="false" />
+    <Property Name="email" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="password" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="estadoUsuario" Type="tinyint" Nullable="false" />
+    <Property Name="fechaRegistro" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuario_Grupo">
+    <Key>
+      <PropertyRef Name="Grupo_id" />
+      <PropertyRef Name="Usuario_id" />
+    </Key>
+    <Property Name="Grupo_id" Type="int" Nullable="false" />
+    <Property Name="Usuario_id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Asignacion_Archivo_Asignacion">
+    <End Role="Asignacion" Type="TareasModel.Store.Asignacion" Multiplicity="1" />
+    <End Role="Asignacion_Archivo" Type="TareasModel.Store.Asignacion_Archivo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Asignacion">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Asignacion_Archivo">
+        <PropertyRef Name="idAsignacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Asignacion_Grupo">
+    <End Role="Grupo" Type="TareasModel.Store.Grupo" Multiplicity="1" />
+    <End Role="Asignacion" Type="TareasModel.Store.Asignacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Grupo">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Asignacion">
+        <PropertyRef Name="idGrupo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Asignacion_TipoAsignacion">
+    <End Role="TipoAsignacion" Type="TareasModel.Store.TipoAsignacion" Multiplicity="1" />
+    <End Role="Asignacion" Type="TareasModel.Store.Asignacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoAsignacion">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Asignacion">
+        <PropertyRef Name="idTipoAsignacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Asignacion_Usuario">
+    <End Role="Usuario" Type="TareasModel.Store.Usuario" Multiplicity="1" />
+    <End Role="Asignacion" Type="TareasModel.Store.Asignacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Asignacion">
+        <PropertyRef Name="idUsuarioAsignacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Grado_Categoria">
+    <End Role="Categoria" Type="TareasModel.Store.Categoria" Multiplicity="1" />
+    <End Role="Grado" Type="TareasModel.Store.Grado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categoria">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Grado">
+        <PropertyRef Name="idCategoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Institucion_Ciudad">
+    <End Role="Ciudad" Type="TareasModel.Store.Ciudad" Multiplicity="1" />
+    <End Role="Institucion" Type="TareasModel.Store.Institucion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ciudad">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Institucion">
+        <PropertyRef Name="idCiudad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comunicado_Grupo">
+    <End Role="Grupo" Type="TareasModel.Store.Grupo" Multiplicity="1" />
+    <End Role="Comunicado" Type="TareasModel.Store.Comunicado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Grupo">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Comunicado">
+        <PropertyRef Name="idGrupo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comunicado_Usuario">
+    <End Role="Usuario" Type="TareasModel.Store.Usuario" Multiplicity="1" />
+    <End Role="Comunicado" Type="TareasModel.Store.Comunicado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Comunicado">
+        <PropertyRef Name="idUsuarioComunicado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Grupo_Grado">
+    <End Role="Grado" Type="TareasModel.Store.Grado" Multiplicity="1" />
+    <End Role="Grupo" Type="TareasModel.Store.Grupo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Grado">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Grupo">
+        <PropertyRef Name="idGrado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Grupo_GradoN">
+    <End Role="GradoN" Type="TareasModel.Store.GradoN" Multiplicity="1" />
+    <End Role="Grupo" Type="TareasModel.Store.Grupo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GradoN">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Grupo">
+        <PropertyRef Name="idGradoN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Grupo_Evaluacion_Grupo">
+    <End Role="Grupo" Type="TareasModel.Store.Grupo" Multiplicity="1" />
+    <End Role="Grupo_Evaluacion" Type="TareasModel.Store.Grupo_Evaluacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Grupo">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Grupo_Evaluacion">
+        <PropertyRef Name="idGrupo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Grupo_Institucion">
+    <End Role="Institucion" Type="TareasModel.Store.Institucion" Multiplicity="1" />
+    <End Role="Grupo" Type="TareasModel.Store.Grupo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institucion">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Grupo">
+        <PropertyRef Name="idInstitucion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Grupo_Restriccion_Grupo">
+    <End Role="Grupo" Type="TareasModel.Store.Grupo" Multiplicity="1" />
+    <End Role="Grupo_Restriccion" Type="TareasModel.Store.Grupo_Restriccion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Grupo">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Grupo_Restriccion">
+        <PropertyRef Name="idGrupo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Grupo_Restriccion_Tipo_Restriccion">
+    <End Role="Tipo_Restriccion" Type="TareasModel.Store.Tipo_Restriccion" Multiplicity="1" />
+    <End Role="Grupo_Restriccion" Type="TareasModel.Store.Grupo_Restriccion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tipo_Restriccion">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Grupo_Restriccion">
+        <PropertyRef Name="idTipoRestriccion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Grupo_Restriccion_TipoAsignacion">
+    <End Role="TipoAsignacion" Type="TareasModel.Store.TipoAsignacion" Multiplicity="1" />
+    <End Role="Grupo_Restriccion" Type="TareasModel.Store.Grupo_Restriccion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoAsignacion">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Grupo_Restriccion">
+        <PropertyRef Name="idTipoAsignacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuario_Institucion">
+    <End Role="Institucion" Type="TareasModel.Store.Institucion" Multiplicity="1" />
+    <End Role="Usuario" Type="TareasModel.Store.Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institucion">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="idInstitucion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuario_Perfil">
+    <End Role="Perfil" Type="TareasModel.Store.Perfil" Multiplicity="1" />
+    <End Role="Usuario" Type="TareasModel.Store.Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Perfil">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="idPerfil" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuario_Grupo_Grupo">
+    <End Role="Grupo" Type="TareasModel.Store.Grupo" Multiplicity="1" />
+    <End Role="Usuario_Grupo" Type="TareasModel.Store.Usuario_Grupo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Grupo">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Usuario_Grupo">
+        <PropertyRef Name="Grupo_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuario_Grupo_Usuario">
+    <End Role="Usuario_Grupo" Type="TareasModel.Store.Usuario_Grupo" Multiplicity="*" />
+    <End Role="Usuario" Type="TareasModel.Store.Usuario" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Usuario_Grupo">
+        <PropertyRef Name="Usuario_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TareasModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="TareasEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Asignacion" EntityType="TareasModel.Asignacion" />
+          <EntitySet Name="Asignacion_Archivo" EntityType="TareasModel.Asignacion_Archivo" />
+          <EntitySet Name="Asignatura" EntityType="TareasModel.Asignatura" />
+          <EntitySet Name="Calendario" EntityType="TareasModel.Calendario" />
+          <EntitySet Name="Categoria" EntityType="TareasModel.Categoria" />
+          <EntitySet Name="Ciudad" EntityType="TareasModel.Ciudad" />
+          <EntitySet Name="Comunicado" EntityType="TareasModel.Comunicado" />
+          <EntitySet Name="Grado" EntityType="TareasModel.Grado" />
+          <EntitySet Name="GradoN" EntityType="TareasModel.GradoN" />
+          <EntitySet Name="Grupo" EntityType="TareasModel.Grupo" />
+          <EntitySet Name="Grupo_Evaluacion" EntityType="TareasModel.Grupo_Evaluacion" />
+          <EntitySet Name="Grupo_Restriccion" EntityType="TareasModel.Grupo_Restriccion" />
+          <EntitySet Name="Institucion" EntityType="TareasModel.Institucion" />
+          <EntitySet Name="Perfil" EntityType="TareasModel.Perfil" />
+          <EntitySet Name="Tipo_Restriccion" EntityType="TareasModel.Tipo_Restriccion" />
+          <EntitySet Name="TipoAsignacion" EntityType="TareasModel.TipoAsignacion" />
+          <EntitySet Name="Usuario" EntityType="TareasModel.Usuario" />
+          <AssociationSet Name="FK_Asignacion_Archivo_Asignacion" Association="TareasModel.FK_Asignacion_Archivo_Asignacion">
+            <End Role="Asignacion" EntitySet="Asignacion" />
+            <End Role="Asignacion_Archivo" EntitySet="Asignacion_Archivo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Asignacion_Grupo" Association="TareasModel.FK_Asignacion_Grupo">
+            <End Role="Grupo" EntitySet="Grupo" />
+            <End Role="Asignacion" EntitySet="Asignacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Asignacion_TipoAsignacion" Association="TareasModel.FK_Asignacion_TipoAsignacion">
+            <End Role="TipoAsignacion" EntitySet="TipoAsignacion" />
+            <End Role="Asignacion" EntitySet="Asignacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Asignacion_Usuario" Association="TareasModel.FK_Asignacion_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Asignacion" EntitySet="Asignacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Grado_Categoria" Association="TareasModel.FK_Grado_Categoria">
+            <End Role="Categoria" EntitySet="Categoria" />
+            <End Role="Grado" EntitySet="Grado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Institucion_Ciudad" Association="TareasModel.FK_Institucion_Ciudad">
+            <End Role="Ciudad" EntitySet="Ciudad" />
+            <End Role="Institucion" EntitySet="Institucion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comunicado_Grupo" Association="TareasModel.FK_Comunicado_Grupo">
+            <End Role="Grupo" EntitySet="Grupo" />
+            <End Role="Comunicado" EntitySet="Comunicado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comunicado_Usuario" Association="TareasModel.FK_Comunicado_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Comunicado" EntitySet="Comunicado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Grupo_Grado" Association="TareasModel.FK_Grupo_Grado">
+            <End Role="Grado" EntitySet="Grado" />
+            <End Role="Grupo" EntitySet="Grupo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Grupo_GradoN" Association="TareasModel.FK_Grupo_GradoN">
+            <End Role="GradoN" EntitySet="GradoN" />
+            <End Role="Grupo" EntitySet="Grupo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Grupo_Evaluacion_Grupo" Association="TareasModel.FK_Grupo_Evaluacion_Grupo">
+            <End Role="Grupo" EntitySet="Grupo" />
+            <End Role="Grupo_Evaluacion" EntitySet="Grupo_Evaluacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Grupo_Institucion" Association="TareasModel.FK_Grupo_Institucion">
+            <End Role="Institucion" EntitySet="Institucion" />
+            <End Role="Grupo" EntitySet="Grupo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Grupo_Restriccion_Grupo" Association="TareasModel.FK_Grupo_Restriccion_Grupo">
+            <End Role="Grupo" EntitySet="Grupo" />
+            <End Role="Grupo_Restriccion" EntitySet="Grupo_Restriccion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Grupo_Restriccion_Tipo_Restriccion" Association="TareasModel.FK_Grupo_Restriccion_Tipo_Restriccion">
+            <End Role="Tipo_Restriccion" EntitySet="Tipo_Restriccion" />
+            <End Role="Grupo_Restriccion" EntitySet="Grupo_Restriccion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Grupo_Restriccion_TipoAsignacion" Association="TareasModel.FK_Grupo_Restriccion_TipoAsignacion">
+            <End Role="TipoAsignacion" EntitySet="TipoAsignacion" />
+            <End Role="Grupo_Restriccion" EntitySet="Grupo_Restriccion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Usuario_Institucion" Association="TareasModel.FK_Usuario_Institucion">
+            <End Role="Institucion" EntitySet="Institucion" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Usuario_Perfil" Association="TareasModel.FK_Usuario_Perfil">
+            <End Role="Perfil" EntitySet="Perfil" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+          <AssociationSet Name="Usuario_Grupo" Association="TareasModel.Usuario_Grupo">
+            <End Role="Grupo" EntitySet="Grupo" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Asignacion">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="idGrupo" Type="Int32" Nullable="false" />
+          <Property Name="idUsuarioAsignacion" Type="Int32" Nullable="false" />
+          <Property Name="titulo" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="detalle" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <Property Name="idAsignatura" Type="Int32" Nullable="false" />
+          <Property Name="fechaAsignacion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="fechaEntrega" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="idTipoAsignacion" Type="Int16" Nullable="false" />
+          <Property Name="fechaRegistro" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="estadoAsignacion" Type="Byte" Nullable="false" />
+          <Property Name="fechaModificacion" Type="DateTime" Precision="3" />
+          <Property Name="fechaEliminacion" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Asignacion_Archivo" Relationship="TareasModel.FK_Asignacion_Archivo_Asignacion" FromRole="Asignacion" ToRole="Asignacion_Archivo" />
+          <NavigationProperty Name="Grupo" Relationship="TareasModel.FK_Asignacion_Grupo" FromRole="Asignacion" ToRole="Grupo" />
+          <NavigationProperty Name="TipoAsignacion" Relationship="TareasModel.FK_Asignacion_TipoAsignacion" FromRole="Asignacion" ToRole="TipoAsignacion" />
+          <NavigationProperty Name="Usuario" Relationship="TareasModel.FK_Asignacion_Usuario" FromRole="Asignacion" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Asignacion_Archivo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="idAsignacion" Type="Int32" Nullable="false" />
+          <Property Name="nombreArchivo" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="pathArchivo" Type="String" Nullable="false" MaxLength="300" Unicode="false" FixedLength="false" />
+          <Property Name="numDescargas" Type="Int32" Nullable="false" />
+          <Property Name="fechaRegistro" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="estadoArchivo" Type="Byte" Nullable="false" />
+          <Property Name="fechaEliminacion" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Asignacion" Relationship="TareasModel.FK_Asignacion_Archivo_Asignacion" FromRole="Asignacion_Archivo" ToRole="Asignacion" />
+        </EntityType>
+        <EntityType Name="Asignatura">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="nombreAsignatura" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Calendario">
+          <Key>
+            <PropertyRef Name="fecha" />
+          </Key>
+          <Property Name="fecha" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="tipoDia" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Categoria">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="nombreCategoria" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Grado" Relationship="TareasModel.FK_Grado_Categoria" FromRole="Categoria" ToRole="Grado" />
+        </EntityType>
+        <EntityType Name="Ciudad">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="nombreCiudad" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Institucion" Relationship="TareasModel.FK_Institucion_Ciudad" FromRole="Ciudad" ToRole="Institucion" />
+        </EntityType>
+        <EntityType Name="Comunicado">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="idUsuarioComunicado" Type="Int32" Nullable="false" />
+          <Property Name="idGrupo" Type="Int32" Nullable="false" />
+          <Property Name="fechaComunicado" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="fechaVigencia" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="titulo" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="urlImagen" Type="String" MaxLength="300" Unicode="false" FixedLength="false" />
+          <Property Name="url1" Type="String" MaxLength="300" Unicode="false" FixedLength="false" />
+          <Property Name="url2" Type="String" MaxLength="300" Unicode="false" FixedLength="false" />
+          <Property Name="detalle" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <Property Name="estadoComunicado" Type="Byte" Nullable="false" />
+          <Property Name="fechaRegistro" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Grupo" Relationship="TareasModel.FK_Comunicado_Grupo" FromRole="Comunicado" ToRole="Grupo" />
+          <NavigationProperty Name="Usuario" Relationship="TareasModel.FK_Comunicado_Usuario" FromRole="Comunicado" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Grado">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="nombreGrado" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="idCategoria" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Categoria" Relationship="TareasModel.FK_Grado_Categoria" FromRole="Grado" ToRole="Categoria" />
+          <NavigationProperty Name="Grupo" Relationship="TareasModel.FK_Grupo_Grado" FromRole="Grado" ToRole="Grupo" />
+        </EntityType>
+        <EntityType Name="GradoN">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="nombreGradoN" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Grupo" Relationship="TareasModel.FK_Grupo_GradoN" FromRole="GradoN" ToRole="Grupo" />
+        </EntityType>
+        <EntityType Name="Grupo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="idInstitucion" Type="Int32" Nullable="false" />
+          <Property Name="idGrado" Type="Int32" Nullable="false" />
+          <Property Name="idGradoN" Type="Int32" Nullable="false" />
+          <Property Name="estadoGrupo" Type="Byte" Nullable="false" />
+          <Property Name="urlImagen" Type="String" MaxLength="300" Unicode="false" FixedLength="false" />
+          <Property Name="ordenCategoria" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Asignacion" Relationship="TareasModel.FK_Asignacion_Grupo" FromRole="Grupo" ToRole="Asignacion" />
+          <NavigationProperty Name="Comunicado" Relationship="TareasModel.FK_Comunicado_Grupo" FromRole="Grupo" ToRole="Comunicado" />
+          <NavigationProperty Name="Grado" Relationship="TareasModel.FK_Grupo_Grado" FromRole="Grupo" ToRole="Grado" />
+          <NavigationProperty Name="GradoN" Relationship="TareasModel.FK_Grupo_GradoN" FromRole="Grupo" ToRole="GradoN" />
+          <NavigationProperty Name="Grupo_Evaluacion" Relationship="TareasModel.FK_Grupo_Evaluacion_Grupo" FromRole="Grupo" ToRole="Grupo_Evaluacion" />
+          <NavigationProperty Name="Institucion" Relationship="TareasModel.FK_Grupo_Institucion" FromRole="Grupo" ToRole="Institucion" />
+          <NavigationProperty Name="Grupo_Restriccion" Relationship="TareasModel.FK_Grupo_Restriccion_Grupo" FromRole="Grupo" ToRole="Grupo_Restriccion" />
+          <NavigationProperty Name="Usuario" Relationship="TareasModel.Usuario_Grupo" FromRole="Grupo" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Grupo_Evaluacion">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="idGrupo" Type="Int32" Nullable="false" />
+          <Property Name="fechaInicial" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="fechaFinal" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Grupo" Relationship="TareasModel.FK_Grupo_Evaluacion_Grupo" FromRole="Grupo_Evaluacion" ToRole="Grupo" />
+        </EntityType>
+        <EntityType Name="Grupo_Restriccion">
+          <Key>
+            <PropertyRef Name="idGrupo" />
+            <PropertyRef Name="idTipoAsignacion" />
+            <PropertyRef Name="idTipoRestriccion" />
+          </Key>
+          <Property Name="idGrupo" Type="Int32" Nullable="false" />
+          <Property Name="idTipoAsignacion" Type="Int16" Nullable="false" />
+          <Property Name="idTipoRestriccion" Type="Int16" Nullable="false" />
+          <Property Name="numMaximoDia" Type="Int16" Nullable="false" />
+          <NavigationProperty Name="Grupo" Relationship="TareasModel.FK_Grupo_Restriccion_Grupo" FromRole="Grupo_Restriccion" ToRole="Grupo" />
+          <NavigationProperty Name="Tipo_Restriccion" Relationship="TareasModel.FK_Grupo_Restriccion_Tipo_Restriccion" FromRole="Grupo_Restriccion" ToRole="Tipo_Restriccion" />
+          <NavigationProperty Name="TipoAsignacion" Relationship="TareasModel.FK_Grupo_Restriccion_TipoAsignacion" FromRole="Grupo_Restriccion" ToRole="TipoAsignacion" />
+        </EntityType>
+        <EntityType Name="Institucion">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="nit" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="razonSocial" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="direccion" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="telefono1" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="telefono2" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="idCiudad" Type="Int32" Nullable="false" />
+          <Property Name="estadoInstitucion" Type="Byte" Nullable="false" />
+          <Property Name="fechaRegistro" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Ciudad" Relationship="TareasModel.FK_Institucion_Ciudad" FromRole="Institucion" ToRole="Ciudad" />
+          <NavigationProperty Name="Grupo" Relationship="TareasModel.FK_Grupo_Institucion" FromRole="Institucion" ToRole="Grupo" />
+          <NavigationProperty Name="Usuario" Relationship="TareasModel.FK_Usuario_Institucion" FromRole="Institucion" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Perfil">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Byte" Nullable="false" />
+          <Property Name="nombrePerfil" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Usuario" Relationship="TareasModel.FK_Usuario_Perfil" FromRole="Perfil" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Tipo_Restriccion">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int16" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="nombreTipoRestriccion" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Grupo_Restriccion" Relationship="TareasModel.FK_Grupo_Restriccion_Tipo_Restriccion" FromRole="Tipo_Restriccion" ToRole="Grupo_Restriccion" />
+        </EntityType>
+        <EntityType Name="TipoAsignacion">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int16" Nullable="false" />
+          <Property Name="nombreTipoAsignacion" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="numMaximoDia" Type="Int16" Nullable="false" />
+          <NavigationProperty Name="Asignacion" Relationship="TareasModel.FK_Asignacion_TipoAsignacion" FromRole="TipoAsignacion" ToRole="Asignacion" />
+          <NavigationProperty Name="Grupo_Restriccion" Relationship="TareasModel.FK_Grupo_Restriccion_TipoAsignacion" FromRole="TipoAsignacion" ToRole="Grupo_Restriccion" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="idInstitucion" Type="Int32" Nullable="false" />
+          <Property Name="nombreUsuario" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="idPerfil" Type="Byte" Nullable="false" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="password" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="estadoUsuario" Type="Byte" Nullable="false" />
+          <Property Name="fechaRegistro" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Asignacion" Relationship="TareasModel.FK_Asignacion_Usuario" FromRole="Usuario" ToRole="Asignacion" />
+          <NavigationProperty Name="Comunicado" Relationship="TareasModel.FK_Comunicado_Usuario" FromRole="Usuario" ToRole="Comunicado" />
+          <NavigationProperty Name="Institucion" Relationship="TareasModel.FK_Usuario_Institucion" FromRole="Usuario" ToRole="Institucion" />
+          <NavigationProperty Name="Perfil" Relationship="TareasModel.FK_Usuario_Perfil" FromRole="Usuario" ToRole="Perfil" />
+          <NavigationProperty Name="Grupo" Relationship="TareasModel.Usuario_Grupo" FromRole="Usuario" ToRole="Grupo" />
+        </EntityType>
+        <Association Name="FK_Asignacion_Archivo_Asignacion">
+          <End Role="Asignacion" Type="TareasModel.Asignacion" Multiplicity="1" />
+          <End Role="Asignacion_Archivo" Type="TareasModel.Asignacion_Archivo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Asignacion">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Asignacion_Archivo">
+              <PropertyRef Name="idAsignacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Asignacion_Grupo">
+          <End Role="Grupo" Type="TareasModel.Grupo" Multiplicity="1" />
+          <End Role="Asignacion" Type="TareasModel.Asignacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Grupo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Asignacion">
+              <PropertyRef Name="idGrupo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Asignacion_TipoAsignacion">
+          <End Role="TipoAsignacion" Type="TareasModel.TipoAsignacion" Multiplicity="1" />
+          <End Role="Asignacion" Type="TareasModel.Asignacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoAsignacion">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Asignacion">
+              <PropertyRef Name="idTipoAsignacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Asignacion_Usuario">
+          <End Role="Usuario" Type="TareasModel.Usuario" Multiplicity="1" />
+          <End Role="Asignacion" Type="TareasModel.Asignacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Asignacion">
+              <PropertyRef Name="idUsuarioAsignacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Grado_Categoria">
+          <End Role="Categoria" Type="TareasModel.Categoria" Multiplicity="1" />
+          <End Role="Grado" Type="TareasModel.Grado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categoria">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Grado">
+              <PropertyRef Name="idCategoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Institucion_Ciudad">
+          <End Role="Ciudad" Type="TareasModel.Ciudad" Multiplicity="1" />
+          <End Role="Institucion" Type="TareasModel.Institucion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ciudad">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Institucion">
+              <PropertyRef Name="idCiudad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comunicado_Grupo">
+          <End Role="Grupo" Type="TareasModel.Grupo" Multiplicity="1" />
+          <End Role="Comunicado" Type="TareasModel.Comunicado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Grupo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Comunicado">
+              <PropertyRef Name="idGrupo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comunicado_Usuario">
+          <End Role="Usuario" Type="TareasModel.Usuario" Multiplicity="1" />
+          <End Role="Comunicado" Type="TareasModel.Comunicado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Comunicado">
+              <PropertyRef Name="idUsuarioComunicado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Grupo_Grado">
+          <End Role="Grado" Type="TareasModel.Grado" Multiplicity="1" />
+          <End Role="Grupo" Type="TareasModel.Grupo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Grado">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Grupo">
+              <PropertyRef Name="idGrado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Grupo_GradoN">
+          <End Role="GradoN" Type="TareasModel.GradoN" Multiplicity="1" />
+          <End Role="Grupo" Type="TareasModel.Grupo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GradoN">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Grupo">
+              <PropertyRef Name="idGradoN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Grupo_Evaluacion_Grupo">
+          <End Role="Grupo" Type="TareasModel.Grupo" Multiplicity="1" />
+          <End Role="Grupo_Evaluacion" Type="TareasModel.Grupo_Evaluacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Grupo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Grupo_Evaluacion">
+              <PropertyRef Name="idGrupo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Grupo_Institucion">
+          <End Role="Institucion" Type="TareasModel.Institucion" Multiplicity="1" />
+          <End Role="Grupo" Type="TareasModel.Grupo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Institucion">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Grupo">
+              <PropertyRef Name="idInstitucion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Grupo_Restriccion_Grupo">
+          <End Role="Grupo" Type="TareasModel.Grupo" Multiplicity="1" />
+          <End Role="Grupo_Restriccion" Type="TareasModel.Grupo_Restriccion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Grupo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Grupo_Restriccion">
+              <PropertyRef Name="idGrupo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Grupo_Restriccion_Tipo_Restriccion">
+          <End Role="Tipo_Restriccion" Type="TareasModel.Tipo_Restriccion" Multiplicity="1" />
+          <End Role="Grupo_Restriccion" Type="TareasModel.Grupo_Restriccion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipo_Restriccion">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Grupo_Restriccion">
+              <PropertyRef Name="idTipoRestriccion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Grupo_Restriccion_TipoAsignacion">
+          <End Role="TipoAsignacion" Type="TareasModel.TipoAsignacion" Multiplicity="1" />
+          <End Role="Grupo_Restriccion" Type="TareasModel.Grupo_Restriccion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoAsignacion">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Grupo_Restriccion">
+              <PropertyRef Name="idTipoAsignacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Usuario_Institucion">
+          <End Role="Institucion" Type="TareasModel.Institucion" Multiplicity="1" />
+          <End Role="Usuario" Type="TareasModel.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Institucion">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="idInstitucion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Usuario_Perfil">
+          <End Role="Perfil" Type="TareasModel.Perfil" Multiplicity="1" />
+          <End Role="Usuario" Type="TareasModel.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Perfil">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="idPerfil" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Usuario_Grupo">
+          <End Role="Grupo" Type="TareasModel.Grupo" Multiplicity="*" />
+          <End Role="Usuario" Type="TareasModel.Usuario" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TareasModelStoreContainer" CdmEntityContainer="TareasEntities">
+    <EntitySetMapping Name="Asignacion">
+      <EntityTypeMapping TypeName="IsTypeOf(TareasModel.Asignacion)">
+        <MappingFragment StoreEntitySet="Asignacion">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idGrupo" ColumnName="idGrupo" />
+          <ScalarProperty Name="idUsuarioAsignacion" ColumnName="idUsuarioAsignacion" />
+          <ScalarProperty Name="titulo" ColumnName="titulo" />
+          <ScalarProperty Name="detalle" ColumnName="detalle" />
+          <ScalarProperty Name="idAsignatura" ColumnName="idAsignatura" />
+          <ScalarProperty Name="fechaAsignacion" ColumnName="fechaAsignacion" />
+          <ScalarProperty Name="fechaEntrega" ColumnName="fechaEntrega" />
+          <ScalarProperty Name="idTipoAsignacion" ColumnName="idTipoAsignacion" />
+          <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+          <ScalarProperty Name="estadoAsignacion" ColumnName="estadoAsignacion" />
+          <ScalarProperty Name="fechaModificacion" ColumnName="fechaModificacion" />
+          <ScalarProperty Name="fechaEliminacion" ColumnName="fechaEliminacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Asignacion_Archivo">
+      <EntityTypeMapping TypeName="IsTypeOf(TareasModel.Asignacion_Archivo)">
+        <MappingFragment StoreEntitySet="Asignacion_Archivo">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idAsignacion" ColumnName="idAsignacion" />
+          <ScalarProperty Name="nombreArchivo" ColumnName="nombreArchivo" />
+          <ScalarProperty Name="pathArchivo" ColumnName="pathArchivo" />
+          <ScalarProperty Name="numDescargas" ColumnName="numDescargas" />
+          <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+          <ScalarProperty Name="estadoArchivo" ColumnName="estadoArchivo" />
+          <ScalarProperty Name="fechaEliminacion" ColumnName="fechaEliminacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Asignatura">
+      <EntityTypeMapping TypeName="IsTypeOf(TareasModel.Asignatura)">
+        <MappingFragment StoreEntitySet="Asignatura">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombreAsignatura" ColumnName="nombreAsignatura" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Calendario">
+      <EntityTypeMapping TypeName="IsTypeOf(TareasModel.Calendario)">
+        <MappingFragment StoreEntitySet="Calendario">
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="tipoDia" ColumnName="tipoDia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categoria">
+      <EntityTypeMapping TypeName="IsTypeOf(TareasModel.Categoria)">
+        <MappingFragment StoreEntitySet="Categoria">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombreCategoria" ColumnName="nombreCategoria" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ciudad">
+      <EntityTypeMapping TypeName="IsTypeOf(TareasModel.Ciudad)">
+        <MappingFragment StoreEntitySet="Ciudad">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombreCiudad" ColumnName="nombreCiudad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comunicado">
+      <EntityTypeMapping TypeName="IsTypeOf(TareasModel.Comunicado)">
+        <MappingFragment StoreEntitySet="Comunicado">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idUsuarioComunicado" ColumnName="idUsuarioComunicado" />
+          <ScalarProperty Name="idGrupo" ColumnName="idGrupo" />
+          <ScalarProperty Name="fechaComunicado" ColumnName="fechaComunicado" />
+          <ScalarProperty Name="fechaVigencia" ColumnName="fechaVigencia" />
+          <ScalarProperty Name="titulo" ColumnName="titulo" />
+          <ScalarProperty Name="urlImagen" ColumnName="urlImagen" />
+          <ScalarProperty Name="url1" ColumnName="url1" />
+          <ScalarProperty Name="url2" ColumnName="url2" />
+          <ScalarProperty Name="detalle" ColumnName="detalle" />
+          <ScalarProperty Name="estadoComunicado" ColumnName="estadoComunicado" />
+          <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Grado">
+      <EntityTypeMapping TypeName="IsTypeOf(TareasModel.Grado)">
+        <MappingFragment StoreEntitySet="Grado">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombreGrado" ColumnName="nombreGrado" />
+          <ScalarProperty Name="idCategoria" ColumnName="idCategoria" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GradoN">
+      <EntityTypeMapping TypeName="IsTypeOf(TareasModel.GradoN)">
+        <MappingFragment StoreEntitySet="GradoN">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombreGradoN" ColumnName="nombreGradoN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Grupo">
+      <EntityTypeMapping TypeName="IsTypeOf(TareasModel.Grupo)">
+        <MappingFragment StoreEntitySet="Grupo">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idInstitucion" ColumnName="idInstitucion" />
+          <ScalarProperty Name="idGrado" ColumnName="idGrado" />
+          <ScalarProperty Name="idGradoN" ColumnName="idGradoN" />
+          <ScalarProperty Name="estadoGrupo" ColumnName="estadoGrupo" />
+          <ScalarProperty Name="urlImagen" ColumnName="urlImagen" />
+          <ScalarProperty Name="ordenCategoria" ColumnName="ordenCategoria" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Grupo_Evaluacion">
+      <EntityTypeMapping TypeName="IsTypeOf(TareasModel.Grupo_Evaluacion)">
+        <MappingFragment StoreEntitySet="Grupo_Evaluacion">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idGrupo" ColumnName="idGrupo" />
+          <ScalarProperty Name="fechaInicial" ColumnName="fechaInicial" />
+          <ScalarProperty Name="fechaFinal" ColumnName="fechaFinal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Grupo_Restriccion">
+      <EntityTypeMapping TypeName="IsTypeOf(TareasModel.Grupo_Restriccion)">
+        <MappingFragment StoreEntitySet="Grupo_Restriccion">
+          <ScalarProperty Name="idGrupo" ColumnName="idGrupo" />
+          <ScalarProperty Name="idTipoAsignacion" ColumnName="idTipoAsignacion" />
+          <ScalarProperty Name="idTipoRestriccion" ColumnName="idTipoRestriccion" />
+          <ScalarProperty Name="numMaximoDia" ColumnName="numMaximoDia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Institucion">
+      <EntityTypeMapping TypeName="IsTypeOf(TareasModel.Institucion)">
+        <MappingFragment StoreEntitySet="Institucion">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nit" ColumnName="nit" />
+          <ScalarProperty Name="razonSocial" ColumnName="razonSocial" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="telefono1" ColumnName="telefono1" />
+          <ScalarProperty Name="telefono2" ColumnName="telefono2" />
+          <ScalarProperty Name="idCiudad" ColumnName="idCiudad" />
+          <ScalarProperty Name="estadoInstitucion" ColumnName="estadoInstitucion" />
+          <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Perfil">
+      <EntityTypeMapping TypeName="IsTypeOf(TareasModel.Perfil)">
+        <MappingFragment StoreEntitySet="Perfil">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombrePerfil" ColumnName="nombrePerfil" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tipo_Restriccion">
+      <EntityTypeMapping TypeName="IsTypeOf(TareasModel.Tipo_Restriccion)">
+        <MappingFragment StoreEntitySet="Tipo_Restriccion">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombreTipoRestriccion" ColumnName="nombreTipoRestriccion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoAsignacion">
+      <EntityTypeMapping TypeName="IsTypeOf(TareasModel.TipoAsignacion)">
+        <MappingFragment StoreEntitySet="TipoAsignacion">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombreTipoAsignacion" ColumnName="nombreTipoAsignacion" />
+          <ScalarProperty Name="numMaximoDia" ColumnName="numMaximoDia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="IsTypeOf(TareasModel.Usuario)">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idInstitucion" ColumnName="idInstitucion" />
+          <ScalarProperty Name="nombreUsuario" ColumnName="nombreUsuario" />
+          <ScalarProperty Name="idPerfil" ColumnName="idPerfil" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="estadoUsuario" ColumnName="estadoUsuario" />
+          <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Usuario_Grupo" TypeName="TareasModel.Usuario_Grupo" StoreEntitySet="Usuario_Grupo">
+      <EndProperty Name="Grupo">
+        <ScalarProperty Name="id" ColumnName="Grupo_id" />
+      </EndProperty>
+      <EndProperty Name="Usuario">
+        <ScalarProperty Name="id" ColumnName="Usuario_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

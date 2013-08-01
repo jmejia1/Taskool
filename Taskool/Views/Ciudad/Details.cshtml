@@ -1,0 +1,22 @@
+﻿@model Taskool.Models.Ciudad
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Ciudad</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.nombreCiudad)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nombreCiudad)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
