@@ -53,7 +53,7 @@ namespace Taskool.Controllers
             int ciu = db.Ciudad.Where(c => c.nombreCiudad == ciudad.nombreCiudad).Count();
             if (ciu > 0)
             {
-                ModelState.AddModelError("nombreCiudad", "El nombre ya existe");
+                ModelState.AddModelError("nombreCiudad", "La ciudad " + ciudad.nombreCiudad + " ya existe");
             }
             
             if (ModelState.IsValid)
