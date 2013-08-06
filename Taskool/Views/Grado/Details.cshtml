@@ -1,0 +1,29 @@
+﻿@model Taskool.Models.Grado
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Grado</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.nombreGrado)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nombreGrado)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Categoria.nombreCategoria)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Categoria.nombreCategoria)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
