@@ -262,6 +262,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\aspnet-WebApplication1-20130626150052.mdf" />
+    <Content Include="App_Data\aspnet-WebApplication1-20130626150052_log.ldf">
+      <DependentUpon>aspnet-WebApplication1-20130626150052.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\foundation\app.css" />
     <Content Include="Content\foundation\foundation.css" />
     <Content Include="Content\foundation\foundation.mvc.css" />
@@ -442,9 +446,7 @@
     <Content Include="Views\Grado\Edit.cshtml" />
     <Content Include="Views\Grado\Delete.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>

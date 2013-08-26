@@ -2,13 +2,13 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
 -- --------------------------------------------------
--- Date Created: 08/01/2013 13:45:47
--- Generated from EDMX file: c:\users\jonattanmej\documents\visual studio 2012\Projects\Taskool\Taskool\Models\TaskoolModel.edmx
+-- Date Created: 08/26/2013 14:49:40
+-- Generated from EDMX file: C:\Users\jonattanmej\Documents\Visual Studio 2012\Projects\Taskool\Taskool\Models\TaskoolModel.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
 GO
-USE [Tareas];
+USE [aspnet-WebApplication1-20130626150052];
 GO
 IF SCHEMA_ID(N'dbo') IS NULL EXECUTE(N'CREATE SCHEMA [dbo]');
 GO
@@ -29,23 +29,26 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_Asignacion_Usuario]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Asignacion] DROP CONSTRAINT [FK_Asignacion_Usuario];
 GO
+IF OBJECT_ID(N'[dbo].[FK_Grado_Categoria]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Grado] DROP CONSTRAINT [FK_Grado_Categoria];
+GO
+IF OBJECT_ID(N'[dbo].[FK_Institucion_Ciudad]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Institucion] DROP CONSTRAINT [FK_Institucion_Ciudad];
+GO
 IF OBJECT_ID(N'[dbo].[FK_Comunicado_Grupo]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Comunicado] DROP CONSTRAINT [FK_Comunicado_Grupo];
 GO
 IF OBJECT_ID(N'[dbo].[FK_Comunicado_Usuario]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Comunicado] DROP CONSTRAINT [FK_Comunicado_Usuario];
 GO
-IF OBJECT_ID(N'[dbo].[FK_Grado_Categoria]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Grado] DROP CONSTRAINT [FK_Grado_Categoria];
-GO
-IF OBJECT_ID(N'[dbo].[FK_Grupo_Evaluacion_Grupo]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Grupo_Evaluacion] DROP CONSTRAINT [FK_Grupo_Evaluacion_Grupo];
-GO
 IF OBJECT_ID(N'[dbo].[FK_Grupo_Grado]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Grupo] DROP CONSTRAINT [FK_Grupo_Grado];
 GO
 IF OBJECT_ID(N'[dbo].[FK_Grupo_GradoN]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Grupo] DROP CONSTRAINT [FK_Grupo_GradoN];
+GO
+IF OBJECT_ID(N'[dbo].[FK_Grupo_Evaluacion_Grupo]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Grupo_Evaluacion] DROP CONSTRAINT [FK_Grupo_Evaluacion_Grupo];
 GO
 IF OBJECT_ID(N'[dbo].[FK_Grupo_Institucion]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Grupo] DROP CONSTRAINT [FK_Grupo_Institucion];
@@ -59,20 +62,17 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_Grupo_Restriccion_TipoAsignacion]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Grupo_Restriccion] DROP CONSTRAINT [FK_Grupo_Restriccion_TipoAsignacion];
 GO
-IF OBJECT_ID(N'[dbo].[FK_Institucion_Ciudad]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Institucion] DROP CONSTRAINT [FK_Institucion_Ciudad];
+IF OBJECT_ID(N'[dbo].[FK_Usuario_Institucion]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Usuario] DROP CONSTRAINT [FK_Usuario_Institucion];
+GO
+IF OBJECT_ID(N'[dbo].[FK_Usuario_Perfil]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Usuario] DROP CONSTRAINT [FK_Usuario_Perfil];
 GO
 IF OBJECT_ID(N'[dbo].[FK_Usuario_Grupo_Grupo]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Usuario_Grupo] DROP CONSTRAINT [FK_Usuario_Grupo_Grupo];
 GO
 IF OBJECT_ID(N'[dbo].[FK_Usuario_Grupo_Usuario]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Usuario_Grupo] DROP CONSTRAINT [FK_Usuario_Grupo_Usuario];
-GO
-IF OBJECT_ID(N'[dbo].[FK_Usuario_Institucion]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Usuario] DROP CONSTRAINT [FK_Usuario_Institucion];
-GO
-IF OBJECT_ID(N'[dbo].[FK_Usuario_Perfil]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Usuario] DROP CONSTRAINT [FK_Usuario_Perfil];
 GO
 
 -- --------------------------------------------------

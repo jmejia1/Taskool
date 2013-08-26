@@ -18,7 +18,7 @@ namespace Taskool.Controllers
 
         public ActionResult Index()
         {
-            return View(db.Ciudad.ToList());
+            return View(db.Ciudades.ToList());
         }
 
         //
@@ -26,7 +26,7 @@ namespace Taskool.Controllers
 
         public ActionResult Details(int id = 0)
         {
-            Ciudad ciudad = db.Ciudad.Find(id);
+            Ciudad ciudad = db.Ciudades.Find(id);
             if (ciudad == null)
             {
                 return HttpNotFound();
@@ -50,7 +50,7 @@ namespace Taskool.Controllers
         public ActionResult Create(Ciudad ciudad)
         {
             
-            int ciu = db.Ciudad.Where(c => c.nombreCiudad == ciudad.nombreCiudad).Count();
+            int ciu = db.Ciudades.Where(c => c.nombreCiudad == ciudad.nombreCiudad).Count();
             if (ciu > 0)
             {
                 ModelState.AddModelError("nombreCiudad", "La ciudad " + ciudad.nombreCiudad + " ya existe");
@@ -59,7 +59,7 @@ namespace Taskool.Controllers
             if (ModelState.IsValid)
             {
 
-                db.Ciudad.Add(ciudad);
+                db.Ciudades.Add(ciudad);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -76,7 +76,7 @@ namespace Taskool.Controllers
 
         public ActionResult Edit(int id = 0)
         {
-            Ciudad ciudad = db.Ciudad.Find(id);
+            Ciudad ciudad = db.Ciudades.Find(id);
             if (ciudad == null)
             {
                 return HttpNotFound();
@@ -105,7 +105,7 @@ namespace Taskool.Controllers
 
         public ActionResult Delete(int id = 0)
         {
-            Ciudad ciudad = db.Ciudad.Find(id);
+            Ciudad ciudad = db.Ciudades.Find(id);
             if (ciudad == null)
             {
                 return HttpNotFound();
@@ -120,8 +120,8 @@ namespace Taskool.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Ciudad ciudad = db.Ciudad.Find(id);
-            db.Ciudad.Remove(ciudad);
+            Ciudad ciudad = db.Ciudades.Find(id);
+            db.Ciudades.Remove(ciudad);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

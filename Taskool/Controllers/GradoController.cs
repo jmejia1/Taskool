@@ -18,7 +18,7 @@ namespace Taskool.Controllers
 
         public ActionResult Index()
         {
-            var grado = db.Grado.Include(g => g.Categoria);
+            var grado = db.Grados.Include(g => g.Categoria);
             return View(grado.ToList());
         }
 
@@ -27,7 +27,7 @@ namespace Taskool.Controllers
 
         public ActionResult Details(int id = 0)
         {
-            Grado grado = db.Grado.Find(id);
+            Grado grado = db.Grados.Find(id);
             if (grado == null)
             {
                 return HttpNotFound();
@@ -40,7 +40,7 @@ namespace Taskool.Controllers
 
         public ActionResult Create()
         {
-            ViewBag.idCategoria = new SelectList(db.Categoria, "id", "nombreCategoria");
+            ViewBag.idCategoria = new SelectList(db.Categorias, "id", "nombreCategoria");
             return View();
         }
 
@@ -53,12 +53,12 @@ namespace Taskool.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Grado.Add(grado);
+                db.Grados.Add(grado);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.idCategoria = new SelectList(db.Categoria, "id", "nombreCategoria", grado.idCategoria);
+            ViewBag.idCategoria = new SelectList(db.Categorias, "id", "nombreCategoria", grado.idCategoria);
             return View(grado);
         }
 
@@ -67,12 +67,12 @@ namespace Taskool.Controllers
 
         public ActionResult Edit(int id = 0)
         {
-            Grado grado = db.Grado.Find(id);
+            Grado grado = db.Grados.Find(id);
             if (grado == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.idCategoria = new SelectList(db.Categoria, "id", "nombreCategoria", grado.idCategoria);
+            ViewBag.idCategoria = new SelectList(db.Categorias, "id", "nombreCategoria", grado.idCategoria);
             return View(grado);
         }
 
@@ -89,7 +89,7 @@ namespace Taskool.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.idCategoria = new SelectList(db.Categoria, "id", "nombreCategoria", grado.idCategoria);
+            ViewBag.idCategoria = new SelectList(db.Categorias, "id", "nombreCategoria", grado.idCategoria);
             return View(grado);
         }
 
@@ -98,7 +98,7 @@ namespace Taskool.Controllers
 
         public ActionResult Delete(int id = 0)
         {
-            Grado grado = db.Grado.Find(id);
+            Grado grado = db.Grados.Find(id);
             if (grado == null)
             {
                 return HttpNotFound();
@@ -113,8 +113,8 @@ namespace Taskool.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Grado grado = db.Grado.Find(id);
-            db.Grado.Remove(grado);
+            Grado grado = db.Grados.Find(id);
+            db.Grados.Remove(grado);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

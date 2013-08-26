@@ -25,22 +25,22 @@ namespace Taskool.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<Asignacion> Asignacion { get; set; }
-        public DbSet<Asignacion_Archivo> Asignacion_Archivo { get; set; }
-        public DbSet<Asignatura> Asignatura { get; set; }
-        public DbSet<Calendario> Calendario { get; set; }
-        public DbSet<Categoria> Categoria { get; set; }
-        public DbSet<Ciudad> Ciudad { get; set; }
-        public DbSet<Comunicado> Comunicado { get; set; }
-        public DbSet<Grado> Grado { get; set; }
-        public DbSet<GradoN> GradoN { get; set; }
-        public DbSet<Grupo> Grupo { get; set; }
-        public DbSet<Grupo_Evaluacion> Grupo_Evaluacion { get; set; }
-        public DbSet<Grupo_Restriccion> Grupo_Restriccion { get; set; }
-        public DbSet<Institucion> Institucion { get; set; }
+        public DbSet<Asignacion> Asignaciones { get; set; }
+        public DbSet<Asignacion_Archivo> Asignacion_Archivos { get; set; }
+        public DbSet<Asignatura> Asignaturas { get; set; }
+        public DbSet<Calendario> Calendarios { get; set; }
+        public DbSet<Categoria> Categorias { get; set; }
+        public DbSet<Ciudad> Ciudades { get; set; }
+        public DbSet<Comunicado> Comunicados { get; set; }
+        public DbSet<Grado> Grados { get; set; }
+        public DbSet<GradoN> GradoNs { get; set; }
+        public DbSet<Grupo> Grupos { get; set; }
+        public DbSet<Grupo_Evaluacion> Grupo_Evaluacions { get; set; }
+        public DbSet<Grupo_Restriccion> Grupo_Restricciones { get; set; }
+        public DbSet<Institucion> Instituciones { get; set; }
         public DbSet<Perfil> Perfil { get; set; }
-        public DbSet<Tipo_Restriccion> Tipo_Restriccion { get; set; }
-        public DbSet<TipoAsignacion> TipoAsignacion { get; set; }
+        public DbSet<Tipo_Restriccion> Tipo_Restricciones { get; set; }
+        public DbSet<TipoAsignacion> TipoAsignaciones { get; set; }
         public DbSet<Usuario> Usuario { get; set; }
     }
 }

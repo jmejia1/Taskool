@@ -514,85 +514,85 @@
     <edmx:ConceptualModels>
       <Schema Namespace="TareasModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="TareasEntities" p1:LazyLoadingEnabled="true">
-          <EntitySet Name="Asignacion" EntityType="TareasModel.Asignacion" />
-          <EntitySet Name="Asignacion_Archivo" EntityType="TareasModel.Asignacion_Archivo" />
-          <EntitySet Name="Asignatura" EntityType="TareasModel.Asignatura" />
-          <EntitySet Name="Calendario" EntityType="TareasModel.Calendario" />
-          <EntitySet Name="Categoria" EntityType="TareasModel.Categoria" />
-          <EntitySet Name="Ciudad" EntityType="TareasModel.Ciudad" />
-          <EntitySet Name="Comunicado" EntityType="TareasModel.Comunicado" />
-          <EntitySet Name="Grado" EntityType="TareasModel.Grado" />
-          <EntitySet Name="GradoN" EntityType="TareasModel.GradoN" />
-          <EntitySet Name="Grupo" EntityType="TareasModel.Grupo" />
-          <EntitySet Name="Grupo_Evaluacion" EntityType="TareasModel.Grupo_Evaluacion" />
-          <EntitySet Name="Grupo_Restriccion" EntityType="TareasModel.Grupo_Restriccion" />
-          <EntitySet Name="Institucion" EntityType="TareasModel.Institucion" />
+          <EntitySet Name="Asignaciones" EntityType="TareasModel.Asignacion" />
+          <EntitySet Name="Asignacion_Archivos" EntityType="TareasModel.Asignacion_Archivo" />
+          <EntitySet Name="Asignaturas" EntityType="TareasModel.Asignatura" />
+          <EntitySet Name="Calendarios" EntityType="TareasModel.Calendario" />
+          <EntitySet Name="Categorias" EntityType="TareasModel.Categoria" />
+          <EntitySet Name="Ciudades" EntityType="TareasModel.Ciudad" />
+          <EntitySet Name="Comunicados" EntityType="TareasModel.Comunicado" />
+          <EntitySet Name="Grados" EntityType="TareasModel.Grado" />
+          <EntitySet Name="GradoNs" EntityType="TareasModel.GradoN" />
+          <EntitySet Name="Grupos" EntityType="TareasModel.Grupo" />
+          <EntitySet Name="Grupo_Evaluacions" EntityType="TareasModel.Grupo_Evaluacion" />
+          <EntitySet Name="Grupo_Restricciones" EntityType="TareasModel.Grupo_Restriccion" />
+          <EntitySet Name="Instituciones" EntityType="TareasModel.Institucion" />
           <EntitySet Name="Perfil" EntityType="TareasModel.Perfil" />
-          <EntitySet Name="Tipo_Restriccion" EntityType="TareasModel.Tipo_Restriccion" />
-          <EntitySet Name="TipoAsignacion" EntityType="TareasModel.TipoAsignacion" />
+          <EntitySet Name="Tipo_Restricciones" EntityType="TareasModel.Tipo_Restriccion" />
+          <EntitySet Name="TipoAsignaciones" EntityType="TareasModel.TipoAsignacion" />
           <EntitySet Name="Usuario" EntityType="TareasModel.Usuario" />
           <AssociationSet Name="FK_Asignacion_Archivo_Asignacion" Association="TareasModel.FK_Asignacion_Archivo_Asignacion">
-            <End Role="Asignacion" EntitySet="Asignacion" />
-            <End Role="Asignacion_Archivo" EntitySet="Asignacion_Archivo" />
+            <End Role="Asignacion" EntitySet="Asignaciones" />
+            <End Role="Asignacion_Archivo" EntitySet="Asignacion_Archivos" />
           </AssociationSet>
           <AssociationSet Name="FK_Asignacion_Grupo" Association="TareasModel.FK_Asignacion_Grupo">
-            <End Role="Grupo" EntitySet="Grupo" />
-            <End Role="Asignacion" EntitySet="Asignacion" />
+            <End Role="Grupo" EntitySet="Grupos" />
+            <End Role="Asignacion" EntitySet="Asignaciones" />
           </AssociationSet>
           <AssociationSet Name="FK_Asignacion_TipoAsignacion" Association="TareasModel.FK_Asignacion_TipoAsignacion">
-            <End Role="TipoAsignacion" EntitySet="TipoAsignacion" />
-            <End Role="Asignacion" EntitySet="Asignacion" />
+            <End Role="TipoAsignacion" EntitySet="TipoAsignaciones" />
+            <End Role="Asignacion" EntitySet="Asignaciones" />
           </AssociationSet>
           <AssociationSet Name="FK_Asignacion_Usuario" Association="TareasModel.FK_Asignacion_Usuario">
             <End Role="Usuario" EntitySet="Usuario" />
-            <End Role="Asignacion" EntitySet="Asignacion" />
+            <End Role="Asignacion" EntitySet="Asignaciones" />
           </AssociationSet>
           <AssociationSet Name="FK_Grado_Categoria" Association="TareasModel.FK_Grado_Categoria">
-            <End Role="Categoria" EntitySet="Categoria" />
-            <End Role="Grado" EntitySet="Grado" />
+            <End Role="Categoria" EntitySet="Categorias" />
+            <End Role="Grado" EntitySet="Grados" />
           </AssociationSet>
           <AssociationSet Name="FK_Institucion_Ciudad" Association="TareasModel.FK_Institucion_Ciudad">
-            <End Role="Ciudad" EntitySet="Ciudad" />
-            <End Role="Institucion" EntitySet="Institucion" />
+            <End Role="Ciudad" EntitySet="Ciudades" />
+            <End Role="Institucion" EntitySet="Instituciones" />
           </AssociationSet>
           <AssociationSet Name="FK_Comunicado_Grupo" Association="TareasModel.FK_Comunicado_Grupo">
-            <End Role="Grupo" EntitySet="Grupo" />
-            <End Role="Comunicado" EntitySet="Comunicado" />
+            <End Role="Grupo" EntitySet="Grupos" />
+            <End Role="Comunicado" EntitySet="Comunicados" />
           </AssociationSet>
           <AssociationSet Name="FK_Comunicado_Usuario" Association="TareasModel.FK_Comunicado_Usuario">
             <End Role="Usuario" EntitySet="Usuario" />
-            <End Role="Comunicado" EntitySet="Comunicado" />
+            <End Role="Comunicado" EntitySet="Comunicados" />
           </AssociationSet>
           <AssociationSet Name="FK_Grupo_Grado" Association="TareasModel.FK_Grupo_Grado">
-            <End Role="Grado" EntitySet="Grado" />
-            <End Role="Grupo" EntitySet="Grupo" />
+            <End Role="Grado" EntitySet="Grados" />
+            <End Role="Grupo" EntitySet="Grupos" />
           </AssociationSet>
           <AssociationSet Name="FK_Grupo_GradoN" Association="TareasModel.FK_Grupo_GradoN">
-            <End Role="GradoN" EntitySet="GradoN" />
-            <End Role="Grupo" EntitySet="Grupo" />
+            <End Role="GradoN" EntitySet="GradoNs" />
+            <End Role="Grupo" EntitySet="Grupos" />
           </AssociationSet>
           <AssociationSet Name="FK_Grupo_Evaluacion_Grupo" Association="TareasModel.FK_Grupo_Evaluacion_Grupo">
-            <End Role="Grupo" EntitySet="Grupo" />
-            <End Role="Grupo_Evaluacion" EntitySet="Grupo_Evaluacion" />
+            <End Role="Grupo" EntitySet="Grupos" />
+            <End Role="Grupo_Evaluacion" EntitySet="Grupo_Evaluacions" />
           </AssociationSet>
           <AssociationSet Name="FK_Grupo_Institucion" Association="TareasModel.FK_Grupo_Institucion">
-            <End Role="Institucion" EntitySet="Institucion" />
-            <End Role="Grupo" EntitySet="Grupo" />
+            <End Role="Institucion" EntitySet="Instituciones" />
+            <End Role="Grupo" EntitySet="Grupos" />
           </AssociationSet>
           <AssociationSet Name="FK_Grupo_Restriccion_Grupo" Association="TareasModel.FK_Grupo_Restriccion_Grupo">
-            <End Role="Grupo" EntitySet="Grupo" />
-            <End Role="Grupo_Restriccion" EntitySet="Grupo_Restriccion" />
+            <End Role="Grupo" EntitySet="Grupos" />
+            <End Role="Grupo_Restriccion" EntitySet="Grupo_Restricciones" />
           </AssociationSet>
           <AssociationSet Name="FK_Grupo_Restriccion_Tipo_Restriccion" Association="TareasModel.FK_Grupo_Restriccion_Tipo_Restriccion">
-            <End Role="Tipo_Restriccion" EntitySet="Tipo_Restriccion" />
-            <End Role="Grupo_Restriccion" EntitySet="Grupo_Restriccion" />
+            <End Role="Tipo_Restriccion" EntitySet="Tipo_Restricciones" />
+            <End Role="Grupo_Restriccion" EntitySet="Grupo_Restricciones" />
           </AssociationSet>
           <AssociationSet Name="FK_Grupo_Restriccion_TipoAsignacion" Association="TareasModel.FK_Grupo_Restriccion_TipoAsignacion">
-            <End Role="TipoAsignacion" EntitySet="TipoAsignacion" />
-            <End Role="Grupo_Restriccion" EntitySet="Grupo_Restriccion" />
+            <End Role="TipoAsignacion" EntitySet="TipoAsignaciones" />
+            <End Role="Grupo_Restriccion" EntitySet="Grupo_Restricciones" />
           </AssociationSet>
           <AssociationSet Name="FK_Usuario_Institucion" Association="TareasModel.FK_Usuario_Institucion">
-            <End Role="Institucion" EntitySet="Institucion" />
+            <End Role="Institucion" EntitySet="Instituciones" />
             <End Role="Usuario" EntitySet="Usuario" />
           </AssociationSet>
           <AssociationSet Name="FK_Usuario_Perfil" Association="TareasModel.FK_Usuario_Perfil">
@@ -600,7 +600,7 @@
             <End Role="Usuario" EntitySet="Usuario" />
           </AssociationSet>
           <AssociationSet Name="Usuario_Grupo" Association="TareasModel.Usuario_Grupo">
-            <End Role="Grupo" EntitySet="Grupo" />
+            <End Role="Grupo" EntitySet="Grupos" />
             <End Role="Usuario" EntitySet="Usuario" />
           </AssociationSet>
         </EntityContainer>
@@ -1026,7 +1026,7 @@
     <edmx:Mappings>
     <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="TareasModelStoreContainer" CdmEntityContainer="TareasEntities">
-    <EntitySetMapping Name="Asignacion">
+    <EntitySetMapping Name="Asignaciones">
       <EntityTypeMapping TypeName="IsTypeOf(TareasModel.Asignacion)">
         <MappingFragment StoreEntitySet="Asignacion">
           <ScalarProperty Name="id" ColumnName="id" />
@@ -1045,7 +1045,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Asignacion_Archivo">
+    <EntitySetMapping Name="Asignacion_Archivos">
       <EntityTypeMapping TypeName="IsTypeOf(TareasModel.Asignacion_Archivo)">
         <MappingFragment StoreEntitySet="Asignacion_Archivo">
           <ScalarProperty Name="id" ColumnName="id" />
@@ -1059,7 +1059,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Asignatura">
+    <EntitySetMapping Name="Asignaturas">
       <EntityTypeMapping TypeName="IsTypeOf(TareasModel.Asignatura)">
         <MappingFragment StoreEntitySet="Asignatura">
           <ScalarProperty Name="id" ColumnName="id" />
@@ -1067,7 +1067,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Calendario">
+    <EntitySetMapping Name="Calendarios">
       <EntityTypeMapping TypeName="IsTypeOf(TareasModel.Calendario)">
         <MappingFragment StoreEntitySet="Calendario">
           <ScalarProperty Name="fecha" ColumnName="fecha" />
@@ -1075,7 +1075,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Categoria">
+    <EntitySetMapping Name="Categorias">
       <EntityTypeMapping TypeName="IsTypeOf(TareasModel.Categoria)">
         <MappingFragment StoreEntitySet="Categoria">
           <ScalarProperty Name="id" ColumnName="id" />
@@ -1083,7 +1083,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Ciudad">
+    <EntitySetMapping Name="Ciudades">
       <EntityTypeMapping TypeName="IsTypeOf(TareasModel.Ciudad)">
         <MappingFragment StoreEntitySet="Ciudad">
           <ScalarProperty Name="id" ColumnName="id" />
@@ -1091,7 +1091,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Comunicado">
+    <EntitySetMapping Name="Comunicados">
       <EntityTypeMapping TypeName="IsTypeOf(TareasModel.Comunicado)">
         <MappingFragment StoreEntitySet="Comunicado">
           <ScalarProperty Name="id" ColumnName="id" />
@@ -1109,7 +1109,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Grado">
+    <EntitySetMapping Name="Grados">
       <EntityTypeMapping TypeName="IsTypeOf(TareasModel.Grado)">
         <MappingFragment StoreEntitySet="Grado">
           <ScalarProperty Name="id" ColumnName="id" />
@@ -1118,7 +1118,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="GradoN">
+    <EntitySetMapping Name="GradoNs">
       <EntityTypeMapping TypeName="IsTypeOf(TareasModel.GradoN)">
         <MappingFragment StoreEntitySet="GradoN">
           <ScalarProperty Name="id" ColumnName="id" />
@@ -1126,7 +1126,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Grupo">
+    <EntitySetMapping Name="Grupos">
       <EntityTypeMapping TypeName="IsTypeOf(TareasModel.Grupo)">
         <MappingFragment StoreEntitySet="Grupo">
           <ScalarProperty Name="id" ColumnName="id" />
@@ -1139,7 +1139,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Grupo_Evaluacion">
+    <EntitySetMapping Name="Grupo_Evaluacions">
       <EntityTypeMapping TypeName="IsTypeOf(TareasModel.Grupo_Evaluacion)">
         <MappingFragment StoreEntitySet="Grupo_Evaluacion">
           <ScalarProperty Name="id" ColumnName="id" />
@@ -1149,7 +1149,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Grupo_Restriccion">
+    <EntitySetMapping Name="Grupo_Restricciones">
       <EntityTypeMapping TypeName="IsTypeOf(TareasModel.Grupo_Restriccion)">
         <MappingFragment StoreEntitySet="Grupo_Restriccion">
           <ScalarProperty Name="idGrupo" ColumnName="idGrupo" />
@@ -1159,7 +1159,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Institucion">
+    <EntitySetMapping Name="Instituciones">
       <EntityTypeMapping TypeName="IsTypeOf(TareasModel.Institucion)">
         <MappingFragment StoreEntitySet="Institucion">
           <ScalarProperty Name="id" ColumnName="id" />
@@ -1182,7 +1182,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Tipo_Restriccion">
+    <EntitySetMapping Name="Tipo_Restricciones">
       <EntityTypeMapping TypeName="IsTypeOf(TareasModel.Tipo_Restriccion)">
         <MappingFragment StoreEntitySet="Tipo_Restriccion">
           <ScalarProperty Name="id" ColumnName="id" />
@@ -1190,7 +1190,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="TipoAsignacion">
+    <EntitySetMapping Name="TipoAsignaciones">
       <EntityTypeMapping TypeName="IsTypeOf(TareasModel.TipoAsignacion)">
         <MappingFragment StoreEntitySet="TipoAsignacion">
           <ScalarProperty Name="id" ColumnName="id" />

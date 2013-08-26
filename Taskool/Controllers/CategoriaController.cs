@@ -18,7 +18,7 @@ namespace Taskool.Controllers
 
         public ActionResult Index()
         {
-            return View(db.Categoria.ToList());
+            return View(db.Categorias.ToList());
         }
 
         //
@@ -26,7 +26,7 @@ namespace Taskool.Controllers
 
         public ActionResult Details(int id = 0)
         {
-            Categoria categoria = db.Categoria.Find(id);
+            Categoria categoria = db.Categorias.Find(id);
             if (categoria == null)
             {
                 return HttpNotFound();
@@ -51,7 +51,7 @@ namespace Taskool.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Categoria.Add(categoria);
+                db.Categorias.Add(categoria);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -64,7 +64,7 @@ namespace Taskool.Controllers
 
         public ActionResult Edit(int id = 0)
         {
-            Categoria categoria = db.Categoria.Find(id);
+            Categoria categoria = db.Categorias.Find(id);
             if (categoria == null)
             {
                 return HttpNotFound();
@@ -93,7 +93,7 @@ namespace Taskool.Controllers
 
         public ActionResult Delete(int id = 0)
         {
-            Categoria categoria = db.Categoria.Find(id);
+            Categoria categoria = db.Categorias.Find(id);
             if (categoria == null)
             {
                 return HttpNotFound();
@@ -108,8 +108,8 @@ namespace Taskool.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Categoria categoria = db.Categoria.Find(id);
-            db.Categoria.Remove(categoria);
+            Categoria categoria = db.Categorias.Find(id);
+            db.Categorias.Remove(categoria);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
