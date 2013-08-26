@@ -4,24 +4,24 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="702d210569a240edb092e5833712f3f4" Name="Diagrama1">
-        <EntityTypeShape EntityType="TareasModel.Asignacion" Width="1.5" PointX="7.5" PointY="9" IsExpanded="true" />
-        <EntityTypeShape EntityType="TareasModel.Asignacion_Archivo" Width="2.125" PointX="9.75" PointY="13.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="TareasModel.Asignatura" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TareasModel.Calendario" Width="1.625" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TareasModel.Categoria" Width="1.5" PointX="0.75" PointY="10.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="TareasModel.Ciudad" Width="1.5" PointX="0.75" PointY="14.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="TareasModel.Comunicado" Width="1.5" PointX="10.5" PointY="9.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="TareasModel.Grado" Width="1.5" PointX="3" PointY="10.25" IsExpanded="true" />
+      <Diagram DiagramId="702d210569a240edb092e5833712f3f4" Name="Diagrama1" ZoomLevel="73">
+        <EntityTypeShape EntityType="TareasModel.Asignacion" Width="1.5" PointX="7.625" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TareasModel.Asignacion_Archivo" Width="2.125" PointX="7.25" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="TareasModel.Asignatura" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TareasModel.Calendario" Width="1.625" PointX="2.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TareasModel.Categoria" Width="1.5" PointX="0.75" PointY="10" IsExpanded="true" FillColor="Green" />
+        <EntityTypeShape EntityType="TareasModel.Ciudad" Width="1.5" PointX="0.75" PointY="13.375" IsExpanded="true" FillColor="Green" />
+        <EntityTypeShape EntityType="TareasModel.Comunicado" Width="1.5" PointX="9.875" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="TareasModel.Grado" Width="1.5" PointX="2.875" PointY="9.875" IsExpanded="true" FillColor="Green" />
         <EntityTypeShape EntityType="TareasModel.GradoN" Width="1.5" PointX="3" PointY="7.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="TareasModel.Grupo" Width="1.5" PointX="5.25" PointY="9.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="TareasModel.Grupo_Evaluacion" Width="1.75" PointX="6.5" PointY="19.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="TareasModel.Grupo_Restriccion" Width="1.5" PointX="11.625" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="TareasModel.Institucion" Width="1.5" PointX="3" PointY="13.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TareasModel.Perfil" Width="1.5" PointX="5.25" PointY="5.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="TareasModel.Tipo_Restriccion" Width="1.5" PointX="8.25" PointY="2" IsExpanded="true" />
-        <EntityTypeShape EntityType="TareasModel.TipoAsignacion" Width="2.375" PointX="8.25" PointY="23.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="TareasModel.Usuario" Width="1.5" PointX="7.5" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TareasModel.Grupo" Width="1.5" PointX="5.125" PointY="8.5" IsExpanded="true" FillColor="192, 64, 0" />
+        <EntityTypeShape EntityType="TareasModel.Grupo_Evaluacion" Width="1.75" PointX="5.125" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TareasModel.Grupo_Restriccion" Width="2" PointX="12.25" PointY="7.625" IsExpanded="true" FillColor="192, 64, 0" />
+        <EntityTypeShape EntityType="TareasModel.Institucion" Width="1.5" PointX="3" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TareasModel.Perfil" Width="1.5" PointX="5.625" PointY="5.375" IsExpanded="true" FillColor="192, 0, 0" />
+        <EntityTypeShape EntityType="TareasModel.Tipo_Restriccion" Width="1.875" PointX="12.25" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TareasModel.TipoAsignacion" Width="2.375" PointX="9.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TareasModel.Usuario" Width="1.5" PointX="7.625" PointY="4.375" IsExpanded="true" FillColor="192, 0, 0" />
         <AssociationConnector Association="TareasModel.FK_Asignacion_Archivo_Asignacion" ManuallyRouted="false" />
         <AssociationConnector Association="TareasModel.FK_Asignacion_Grupo" ManuallyRouted="false" />
         <AssociationConnector Association="TareasModel.FK_Asignacion_TipoAsignacion" ManuallyRouted="false" />
@@ -37,7 +37,7 @@
         <AssociationConnector Association="TareasModel.FK_Grupo_Restriccion_Grupo" ManuallyRouted="false" />
         <AssociationConnector Association="TareasModel.FK_Grupo_Restriccion_Tipo_Restriccion" ManuallyRouted="false" />
         <AssociationConnector Association="TareasModel.FK_Grupo_Restriccion_TipoAsignacion" ManuallyRouted="false" />
-        <AssociationConnector Association="TareasModel.FK_Usuario_Institucion" ManuallyRouted="false" />
+        <AssociationConnector Association="TareasModel.FK_Usuario_Institucion" ManuallyRouted="false" ></AssociationConnector>
         <AssociationConnector Association="TareasModel.FK_Usuario_Perfil" ManuallyRouted="false" />
         <AssociationConnector Association="TareasModel.Usuario_Grupo" ManuallyRouted="false" />
       </Diagram>
