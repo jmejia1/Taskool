@@ -1,0 +1,98 @@
+﻿@model Taskool.Models.Institucion
+
+@{
+    ViewBag.Title = "Crear";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    if(ViewData.ModelState[""] != null && ViewData.ModelState[""].Errors.Count() > 0)
+    { 
+        <div class="alert-box alert">
+            @Html.ValidationSummary(true, "Errores: ")
+            <a href="" class="close">&times;</a>
+        </div>
+    }
+
+    <fieldset>
+        <legend>Institución</legend>
+
+        <div class="editor-label">
+           NIT
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.nit)
+            @Html.ValidationMessageFor(model => model.nit)
+        </div>
+
+        <div class="editor-label">
+           Razón Social
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.razonSocial)
+            @Html.ValidationMessageFor(model => model.razonSocial)
+        </div>
+
+        <div class="editor-label">
+            Dirección
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.direccion)
+            @Html.ValidationMessageFor(model => model.direccion)
+        </div>
+
+        <div class="editor-label">
+             Teléfono 1
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.telefono1)
+            @Html.ValidationMessageFor(model => model.telefono1)
+        </div>
+
+        <div class="editor-label">
+             Teléfono 2
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.telefono2)
+            @Html.ValidationMessageFor(model => model.telefono2)
+        </div>
+
+        <div class="editor-label">
+            Ciudad
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("idCiudad", String.Empty)
+            @Html.ValidationMessageFor(model => model.idCiudad)
+        </div>
+
+        <div class="editor-label">
+            Estado
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.estadoInstitucion)
+            @Html.ValidationMessageFor(model => model.estadoInstitucion)
+        </div>
+
+        <div class="editor-label">
+           Fecha Registro
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.fechaRegistro)
+            @Html.ValidationMessageFor(model => model.fechaRegistro)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" class = "round small button"/>
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Regresar a la lista", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

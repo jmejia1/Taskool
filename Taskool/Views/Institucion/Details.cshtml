@@ -1,0 +1,71 @@
+﻿@model Taskool.Models.Institucion
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Institucion</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.nit)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nit)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.razonSocial)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.razonSocial)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.direccion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.direccion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.telefono1)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.telefono1)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.telefono2)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.telefono2)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Ciudad.nombreCiudad)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Ciudad.nombreCiudad)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.estadoInstitucion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.estadoInstitucion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.fechaRegistro)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fechaRegistro)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.id }) |
+    @Html.ActionLink("Regresar a la lista", "Index")
+</p>

@@ -188,6 +188,7 @@
     <Compile Include="Controllers\CiudadController.cs" />
     <Compile Include="Controllers\GradoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InstitucionController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -445,6 +446,11 @@
     <Content Include="Views\Grado\Create.cshtml" />
     <Content Include="Views\Grado\Edit.cshtml" />
     <Content Include="Views\Grado\Delete.cshtml" />
+    <Content Include="Views\Institucion\Index.cshtml" />
+    <Content Include="Views\Institucion\Details.cshtml" />
+    <Content Include="Views\Institucion\Create.cshtml" />
+    <Content Include="Views\Institucion\Edit.cshtml" />
+    <Content Include="Views\Institucion\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
