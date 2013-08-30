@@ -1,0 +1,92 @@
+﻿@model Taskool.Models.Comunicado
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Comunicado</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Usuario.nombreUsuario)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Usuario.nombreUsuario)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Grupo.urlImagen)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Grupo.urlImagen)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.fechaComunicado)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fechaComunicado)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.fechaVigencia)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fechaVigencia)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.titulo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.titulo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.urlImagen)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.urlImagen)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.url1)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.url1)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.url2)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.url2)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.detalle)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.detalle)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.estadoComunicado)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.estadoComunicado)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.fechaRegistro)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fechaRegistro)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

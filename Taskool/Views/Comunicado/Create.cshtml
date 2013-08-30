@@ -1,0 +1,116 @@
+﻿@model Taskool.Models.Comunicado
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Comunicado</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.idUsuarioComunicado, "Usuario")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("idUsuarioComunicado", String.Empty)
+            @Html.ValidationMessageFor(model => model.idUsuarioComunicado)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.idGrupo, "Grupo")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("idGrupo", String.Empty)
+            @Html.ValidationMessageFor(model => model.idGrupo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.fechaComunicado)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.fechaComunicado)
+            @Html.ValidationMessageFor(model => model.fechaComunicado)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.fechaVigencia)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.fechaVigencia)
+            @Html.ValidationMessageFor(model => model.fechaVigencia)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.titulo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.titulo)
+            @Html.ValidationMessageFor(model => model.titulo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.urlImagen)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.urlImagen)
+            @Html.ValidationMessageFor(model => model.urlImagen)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.url1)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.url1)
+            @Html.ValidationMessageFor(model => model.url1)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.url2)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.url2)
+            @Html.ValidationMessageFor(model => model.url2)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.detalle)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.detalle)
+            @Html.ValidationMessageFor(model => model.detalle)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.estadoComunicado)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.estadoComunicado)
+            @Html.ValidationMessageFor(model => model.estadoComunicado)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.fechaRegistro)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.fechaRegistro)
+            @Html.ValidationMessageFor(model => model.fechaRegistro)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

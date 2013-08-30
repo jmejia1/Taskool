@@ -188,9 +188,12 @@
     <Compile Include="Controllers\CalendarioController.cs" />
     <Compile Include="Controllers\CategoriaController.cs" />
     <Compile Include="Controllers\CiudadController.cs" />
+    <Compile Include="Controllers\ComunicadoController.cs" />
     <Compile Include="Controllers\GradoController.cs" />
+    <Compile Include="Controllers\GradoNController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InstitucionController.cs" />
+    <Compile Include="Controllers\TipoRestriccionController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -463,6 +466,21 @@
     <Content Include="Views\Calendario\Create.cshtml" />
     <Content Include="Views\Calendario\Edit.cshtml" />
     <Content Include="Views\Calendario\Delete.cshtml" />
+    <Content Include="Views\GradoN\Index.cshtml" />
+    <Content Include="Views\GradoN\Details.cshtml" />
+    <Content Include="Views\GradoN\Create.cshtml" />
+    <Content Include="Views\GradoN\Edit.cshtml" />
+    <Content Include="Views\GradoN\Delete.cshtml" />
+    <Content Include="Views\TipoRestriccion\Index.cshtml" />
+    <Content Include="Views\TipoRestriccion\Details.cshtml" />
+    <Content Include="Views\TipoRestriccion\Create.cshtml" />
+    <Content Include="Views\TipoRestriccion\Edit.cshtml" />
+    <Content Include="Views\TipoRestriccion\Delete.cshtml" />
+    <Content Include="Views\Comunicado\Index.cshtml" />
+    <Content Include="Views\Comunicado\Details.cshtml" />
+    <Content Include="Views\Comunicado\Create.cshtml" />
+    <Content Include="Views\Comunicado\Edit.cshtml" />
+    <Content Include="Views\Comunicado\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

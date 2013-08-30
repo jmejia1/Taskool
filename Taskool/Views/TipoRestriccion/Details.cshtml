@@ -1,0 +1,22 @@
+﻿@model Taskool.Models.Tipo_Restriccion
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Tipo_Restriccion</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.nombreTipoRestriccion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nombreTipoRestriccion)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

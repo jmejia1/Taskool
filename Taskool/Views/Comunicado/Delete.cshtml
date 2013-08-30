@@ -1,0 +1,96 @@
+﻿@model Taskool.Models.Comunicado
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Comunicado</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Usuario.nombreUsuario)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Usuario.nombreUsuario)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Grupo.urlImagen)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Grupo.urlImagen)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.fechaComunicado)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fechaComunicado)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.fechaVigencia)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fechaVigencia)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.titulo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.titulo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.urlImagen)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.urlImagen)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.url1)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.url1)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.url2)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.url2)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.detalle)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.detalle)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.estadoComunicado)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.estadoComunicado)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.fechaRegistro)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fechaRegistro)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
