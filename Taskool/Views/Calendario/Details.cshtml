@@ -1,0 +1,29 @@
+﻿@model Taskool.Models.Calendario
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Calendario</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.fecha)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fecha)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.tipoDia)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tipoDia)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

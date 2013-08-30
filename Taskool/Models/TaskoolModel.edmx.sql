@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
 -- --------------------------------------------------
--- Date Created: 08/26/2013 14:49:40
--- Generated from EDMX file: C:\Users\jonattanmej\Documents\Visual Studio 2012\Projects\Taskool\Taskool\Models\TaskoolModel.edmx
+-- Date Created: 08/30/2013 11:05:39
+-- Generated from EDMX file: D:\Datos\Personales\GitHub\Taskool\Taskool\Models\TaskoolModel.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -18,49 +18,49 @@ GO
 -- --------------------------------------------------
 
 IF OBJECT_ID(N'[dbo].[FK_Asignacion_Archivo_Asignacion]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Asignacion_Archivo] DROP CONSTRAINT [FK_Asignacion_Archivo_Asignacion];
+    ALTER TABLE [dbo].[Asignacion_Archivos] DROP CONSTRAINT [FK_Asignacion_Archivo_Asignacion];
 GO
 IF OBJECT_ID(N'[dbo].[FK_Asignacion_Grupo]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Asignacion] DROP CONSTRAINT [FK_Asignacion_Grupo];
+    ALTER TABLE [dbo].[Asignaciones] DROP CONSTRAINT [FK_Asignacion_Grupo];
 GO
 IF OBJECT_ID(N'[dbo].[FK_Asignacion_TipoAsignacion]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Asignacion] DROP CONSTRAINT [FK_Asignacion_TipoAsignacion];
+    ALTER TABLE [dbo].[Asignaciones] DROP CONSTRAINT [FK_Asignacion_TipoAsignacion];
 GO
 IF OBJECT_ID(N'[dbo].[FK_Asignacion_Usuario]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Asignacion] DROP CONSTRAINT [FK_Asignacion_Usuario];
+    ALTER TABLE [dbo].[Asignaciones] DROP CONSTRAINT [FK_Asignacion_Usuario];
 GO
 IF OBJECT_ID(N'[dbo].[FK_Grado_Categoria]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Grado] DROP CONSTRAINT [FK_Grado_Categoria];
+    ALTER TABLE [dbo].[Grados] DROP CONSTRAINT [FK_Grado_Categoria];
 GO
 IF OBJECT_ID(N'[dbo].[FK_Institucion_Ciudad]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Institucion] DROP CONSTRAINT [FK_Institucion_Ciudad];
+    ALTER TABLE [dbo].[Instituciones] DROP CONSTRAINT [FK_Institucion_Ciudad];
 GO
 IF OBJECT_ID(N'[dbo].[FK_Comunicado_Grupo]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Comunicado] DROP CONSTRAINT [FK_Comunicado_Grupo];
+    ALTER TABLE [dbo].[Comunicados] DROP CONSTRAINT [FK_Comunicado_Grupo];
 GO
 IF OBJECT_ID(N'[dbo].[FK_Comunicado_Usuario]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Comunicado] DROP CONSTRAINT [FK_Comunicado_Usuario];
+    ALTER TABLE [dbo].[Comunicados] DROP CONSTRAINT [FK_Comunicado_Usuario];
 GO
 IF OBJECT_ID(N'[dbo].[FK_Grupo_Grado]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Grupo] DROP CONSTRAINT [FK_Grupo_Grado];
+    ALTER TABLE [dbo].[Grupos] DROP CONSTRAINT [FK_Grupo_Grado];
 GO
 IF OBJECT_ID(N'[dbo].[FK_Grupo_GradoN]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Grupo] DROP CONSTRAINT [FK_Grupo_GradoN];
+    ALTER TABLE [dbo].[Grupos] DROP CONSTRAINT [FK_Grupo_GradoN];
 GO
 IF OBJECT_ID(N'[dbo].[FK_Grupo_Evaluacion_Grupo]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Grupo_Evaluacion] DROP CONSTRAINT [FK_Grupo_Evaluacion_Grupo];
+    ALTER TABLE [dbo].[Grupo_Evaluacions] DROP CONSTRAINT [FK_Grupo_Evaluacion_Grupo];
 GO
 IF OBJECT_ID(N'[dbo].[FK_Grupo_Institucion]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Grupo] DROP CONSTRAINT [FK_Grupo_Institucion];
+    ALTER TABLE [dbo].[Grupos] DROP CONSTRAINT [FK_Grupo_Institucion];
 GO
 IF OBJECT_ID(N'[dbo].[FK_Grupo_Restriccion_Grupo]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Grupo_Restriccion] DROP CONSTRAINT [FK_Grupo_Restriccion_Grupo];
+    ALTER TABLE [dbo].[Grupo_Restricciones] DROP CONSTRAINT [FK_Grupo_Restriccion_Grupo];
 GO
 IF OBJECT_ID(N'[dbo].[FK_Grupo_Restriccion_Tipo_Restriccion]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Grupo_Restriccion] DROP CONSTRAINT [FK_Grupo_Restriccion_Tipo_Restriccion];
+    ALTER TABLE [dbo].[Grupo_Restricciones] DROP CONSTRAINT [FK_Grupo_Restriccion_Tipo_Restriccion];
 GO
 IF OBJECT_ID(N'[dbo].[FK_Grupo_Restriccion_TipoAsignacion]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Grupo_Restriccion] DROP CONSTRAINT [FK_Grupo_Restriccion_TipoAsignacion];
+    ALTER TABLE [dbo].[Grupo_Restricciones] DROP CONSTRAINT [FK_Grupo_Restriccion_TipoAsignacion];
 GO
 IF OBJECT_ID(N'[dbo].[FK_Usuario_Institucion]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Usuario] DROP CONSTRAINT [FK_Usuario_Institucion];
@@ -79,53 +79,53 @@ GO
 -- Dropping existing tables
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[dbo].[Asignacion]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Asignacion];
+IF OBJECT_ID(N'[dbo].[Asignaciones]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Asignaciones];
 GO
-IF OBJECT_ID(N'[dbo].[Asignacion_Archivo]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Asignacion_Archivo];
+IF OBJECT_ID(N'[dbo].[Asignacion_Archivos]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Asignacion_Archivos];
 GO
-IF OBJECT_ID(N'[dbo].[Asignatura]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Asignatura];
+IF OBJECT_ID(N'[dbo].[Asignaturas]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Asignaturas];
 GO
-IF OBJECT_ID(N'[dbo].[Calendario]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Calendario];
+IF OBJECT_ID(N'[dbo].[Calendarios]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Calendarios];
 GO
-IF OBJECT_ID(N'[dbo].[Categoria]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Categoria];
+IF OBJECT_ID(N'[dbo].[Categorias]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Categorias];
 GO
-IF OBJECT_ID(N'[dbo].[Ciudad]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Ciudad];
+IF OBJECT_ID(N'[dbo].[Ciudades]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Ciudades];
 GO
-IF OBJECT_ID(N'[dbo].[Comunicado]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Comunicado];
+IF OBJECT_ID(N'[dbo].[Comunicados]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Comunicados];
 GO
-IF OBJECT_ID(N'[dbo].[Grado]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Grado];
+IF OBJECT_ID(N'[dbo].[Grados]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Grados];
 GO
-IF OBJECT_ID(N'[dbo].[GradoN]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[GradoN];
+IF OBJECT_ID(N'[dbo].[GradoNs]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[GradoNs];
 GO
-IF OBJECT_ID(N'[dbo].[Grupo]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Grupo];
+IF OBJECT_ID(N'[dbo].[Grupos]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Grupos];
 GO
-IF OBJECT_ID(N'[dbo].[Grupo_Evaluacion]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Grupo_Evaluacion];
+IF OBJECT_ID(N'[dbo].[Grupo_Evaluacions]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Grupo_Evaluacions];
 GO
-IF OBJECT_ID(N'[dbo].[Grupo_Restriccion]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Grupo_Restriccion];
+IF OBJECT_ID(N'[dbo].[Grupo_Restricciones]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Grupo_Restricciones];
 GO
-IF OBJECT_ID(N'[dbo].[Institucion]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Institucion];
+IF OBJECT_ID(N'[dbo].[Instituciones]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Instituciones];
 GO
 IF OBJECT_ID(N'[dbo].[Perfil]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Perfil];
 GO
-IF OBJECT_ID(N'[dbo].[Tipo_Restriccion]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Tipo_Restriccion];
+IF OBJECT_ID(N'[dbo].[Tipo_Restricciones]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Tipo_Restricciones];
 GO
-IF OBJECT_ID(N'[dbo].[TipoAsignacion]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[TipoAsignacion];
+IF OBJECT_ID(N'[dbo].[TipoAsignaciones]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[TipoAsignaciones];
 GO
 IF OBJECT_ID(N'[dbo].[Usuario]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Usuario];
@@ -138,8 +138,8 @@ GO
 -- Creating all tables
 -- --------------------------------------------------
 
--- Creating table 'Asignacion'
-CREATE TABLE [dbo].[Asignacion] (
+-- Creating table 'Asignaciones'
+CREATE TABLE [dbo].[Asignaciones] (
     [id] int IDENTITY(1,1) NOT NULL,
     [idGrupo] int  NOT NULL,
     [idUsuarioAsignacion] int  NOT NULL,
@@ -156,8 +156,8 @@ CREATE TABLE [dbo].[Asignacion] (
 );
 GO
 
--- Creating table 'Asignacion_Archivo'
-CREATE TABLE [dbo].[Asignacion_Archivo] (
+-- Creating table 'Asignacion_Archivos'
+CREATE TABLE [dbo].[Asignacion_Archivos] (
     [id] int IDENTITY(1,1) NOT NULL,
     [idAsignacion] int  NOT NULL,
     [nombreArchivo] varchar(200)  NOT NULL,
@@ -169,36 +169,37 @@ CREATE TABLE [dbo].[Asignacion_Archivo] (
 );
 GO
 
--- Creating table 'Asignatura'
-CREATE TABLE [dbo].[Asignatura] (
+-- Creating table 'Asignaturas'
+CREATE TABLE [dbo].[Asignaturas] (
     [id] int IDENTITY(1,1) NOT NULL,
     [nombreAsignatura] varchar(100)  NOT NULL
 );
 GO
 
--- Creating table 'Calendario'
-CREATE TABLE [dbo].[Calendario] (
+-- Creating table 'Calendarios'
+CREATE TABLE [dbo].[Calendarios] (
     [fecha] datetime  NOT NULL,
-    [tipoDia] varchar(1)  NOT NULL
+    [tipoDia] varchar(1)  NOT NULL,
+    [id] int IDENTITY(1,1) NOT NULL
 );
 GO
 
--- Creating table 'Categoria'
-CREATE TABLE [dbo].[Categoria] (
+-- Creating table 'Categorias'
+CREATE TABLE [dbo].[Categorias] (
     [id] int IDENTITY(1,1) NOT NULL,
     [nombreCategoria] varchar(50)  NOT NULL
 );
 GO
 
--- Creating table 'Ciudad'
-CREATE TABLE [dbo].[Ciudad] (
+-- Creating table 'Ciudades'
+CREATE TABLE [dbo].[Ciudades] (
     [id] int IDENTITY(1,1) NOT NULL,
     [nombreCiudad] varchar(100)  NOT NULL
 );
 GO
 
--- Creating table 'Comunicado'
-CREATE TABLE [dbo].[Comunicado] (
+-- Creating table 'Comunicados'
+CREATE TABLE [dbo].[Comunicados] (
     [id] int IDENTITY(1,1) NOT NULL,
     [idUsuarioComunicado] int  NOT NULL,
     [idGrupo] int  NOT NULL,
@@ -214,23 +215,23 @@ CREATE TABLE [dbo].[Comunicado] (
 );
 GO
 
--- Creating table 'Grado'
-CREATE TABLE [dbo].[Grado] (
+-- Creating table 'Grados'
+CREATE TABLE [dbo].[Grados] (
     [id] int IDENTITY(1,1) NOT NULL,
     [nombreGrado] varchar(100)  NOT NULL,
     [idCategoria] int  NOT NULL
 );
 GO
 
--- Creating table 'GradoN'
-CREATE TABLE [dbo].[GradoN] (
+-- Creating table 'GradoNs'
+CREATE TABLE [dbo].[GradoNs] (
     [id] int IDENTITY(1,1) NOT NULL,
     [nombreGradoN] varchar(50)  NOT NULL
 );
 GO
 
--- Creating table 'Grupo'
-CREATE TABLE [dbo].[Grupo] (
+-- Creating table 'Grupos'
+CREATE TABLE [dbo].[Grupos] (
     [id] int IDENTITY(1,1) NOT NULL,
     [idInstitucion] int  NOT NULL,
     [idGrado] int  NOT NULL,
@@ -241,8 +242,8 @@ CREATE TABLE [dbo].[Grupo] (
 );
 GO
 
--- Creating table 'Grupo_Evaluacion'
-CREATE TABLE [dbo].[Grupo_Evaluacion] (
+-- Creating table 'Grupo_Evaluacions'
+CREATE TABLE [dbo].[Grupo_Evaluacions] (
     [id] int IDENTITY(1,1) NOT NULL,
     [idGrupo] int  NOT NULL,
     [fechaInicial] datetime  NOT NULL,
@@ -250,8 +251,8 @@ CREATE TABLE [dbo].[Grupo_Evaluacion] (
 );
 GO
 
--- Creating table 'Grupo_Restriccion'
-CREATE TABLE [dbo].[Grupo_Restriccion] (
+-- Creating table 'Grupo_Restricciones'
+CREATE TABLE [dbo].[Grupo_Restricciones] (
     [idGrupo] int  NOT NULL,
     [idTipoAsignacion] smallint  NOT NULL,
     [idTipoRestriccion] smallint  NOT NULL,
@@ -259,8 +260,8 @@ CREATE TABLE [dbo].[Grupo_Restriccion] (
 );
 GO
 
--- Creating table 'Institucion'
-CREATE TABLE [dbo].[Institucion] (
+-- Creating table 'Instituciones'
+CREATE TABLE [dbo].[Instituciones] (
     [id] int IDENTITY(1,1) NOT NULL,
     [nit] varchar(20)  NOT NULL,
     [razonSocial] varchar(100)  NOT NULL,
@@ -280,15 +281,15 @@ CREATE TABLE [dbo].[Perfil] (
 );
 GO
 
--- Creating table 'Tipo_Restriccion'
-CREATE TABLE [dbo].[Tipo_Restriccion] (
+-- Creating table 'Tipo_Restricciones'
+CREATE TABLE [dbo].[Tipo_Restricciones] (
     [id] smallint IDENTITY(1,1) NOT NULL,
     [nombreTipoRestriccion] varchar(100)  NOT NULL
 );
 GO
 
--- Creating table 'TipoAsignacion'
-CREATE TABLE [dbo].[TipoAsignacion] (
+-- Creating table 'TipoAsignaciones'
+CREATE TABLE [dbo].[TipoAsignaciones] (
     [id] smallint  NOT NULL,
     [nombreTipoAsignacion] varchar(100)  NOT NULL,
     [numMaximoDia] smallint  NOT NULL
@@ -319,81 +320,81 @@ GO
 -- Creating all PRIMARY KEY constraints
 -- --------------------------------------------------
 
--- Creating primary key on [id] in table 'Asignacion'
-ALTER TABLE [dbo].[Asignacion]
-ADD CONSTRAINT [PK_Asignacion]
+-- Creating primary key on [id] in table 'Asignaciones'
+ALTER TABLE [dbo].[Asignaciones]
+ADD CONSTRAINT [PK_Asignaciones]
     PRIMARY KEY CLUSTERED ([id] ASC);
 GO
 
--- Creating primary key on [id] in table 'Asignacion_Archivo'
-ALTER TABLE [dbo].[Asignacion_Archivo]
-ADD CONSTRAINT [PK_Asignacion_Archivo]
+-- Creating primary key on [id] in table 'Asignacion_Archivos'
+ALTER TABLE [dbo].[Asignacion_Archivos]
+ADD CONSTRAINT [PK_Asignacion_Archivos]
     PRIMARY KEY CLUSTERED ([id] ASC);
 GO
 
--- Creating primary key on [id] in table 'Asignatura'
-ALTER TABLE [dbo].[Asignatura]
-ADD CONSTRAINT [PK_Asignatura]
+-- Creating primary key on [id] in table 'Asignaturas'
+ALTER TABLE [dbo].[Asignaturas]
+ADD CONSTRAINT [PK_Asignaturas]
     PRIMARY KEY CLUSTERED ([id] ASC);
 GO
 
--- Creating primary key on [fecha] in table 'Calendario'
-ALTER TABLE [dbo].[Calendario]
-ADD CONSTRAINT [PK_Calendario]
-    PRIMARY KEY CLUSTERED ([fecha] ASC);
-GO
-
--- Creating primary key on [id] in table 'Categoria'
-ALTER TABLE [dbo].[Categoria]
-ADD CONSTRAINT [PK_Categoria]
+-- Creating primary key on [id] in table 'Calendarios'
+ALTER TABLE [dbo].[Calendarios]
+ADD CONSTRAINT [PK_Calendarios]
     PRIMARY KEY CLUSTERED ([id] ASC);
 GO
 
--- Creating primary key on [id] in table 'Ciudad'
-ALTER TABLE [dbo].[Ciudad]
-ADD CONSTRAINT [PK_Ciudad]
+-- Creating primary key on [id] in table 'Categorias'
+ALTER TABLE [dbo].[Categorias]
+ADD CONSTRAINT [PK_Categorias]
     PRIMARY KEY CLUSTERED ([id] ASC);
 GO
 
--- Creating primary key on [id] in table 'Comunicado'
-ALTER TABLE [dbo].[Comunicado]
-ADD CONSTRAINT [PK_Comunicado]
+-- Creating primary key on [id] in table 'Ciudades'
+ALTER TABLE [dbo].[Ciudades]
+ADD CONSTRAINT [PK_Ciudades]
     PRIMARY KEY CLUSTERED ([id] ASC);
 GO
 
--- Creating primary key on [id] in table 'Grado'
-ALTER TABLE [dbo].[Grado]
-ADD CONSTRAINT [PK_Grado]
+-- Creating primary key on [id] in table 'Comunicados'
+ALTER TABLE [dbo].[Comunicados]
+ADD CONSTRAINT [PK_Comunicados]
     PRIMARY KEY CLUSTERED ([id] ASC);
 GO
 
--- Creating primary key on [id] in table 'GradoN'
-ALTER TABLE [dbo].[GradoN]
-ADD CONSTRAINT [PK_GradoN]
+-- Creating primary key on [id] in table 'Grados'
+ALTER TABLE [dbo].[Grados]
+ADD CONSTRAINT [PK_Grados]
     PRIMARY KEY CLUSTERED ([id] ASC);
 GO
 
--- Creating primary key on [id] in table 'Grupo'
-ALTER TABLE [dbo].[Grupo]
-ADD CONSTRAINT [PK_Grupo]
+-- Creating primary key on [id] in table 'GradoNs'
+ALTER TABLE [dbo].[GradoNs]
+ADD CONSTRAINT [PK_GradoNs]
     PRIMARY KEY CLUSTERED ([id] ASC);
 GO
 
--- Creating primary key on [id] in table 'Grupo_Evaluacion'
-ALTER TABLE [dbo].[Grupo_Evaluacion]
-ADD CONSTRAINT [PK_Grupo_Evaluacion]
+-- Creating primary key on [id] in table 'Grupos'
+ALTER TABLE [dbo].[Grupos]
+ADD CONSTRAINT [PK_Grupos]
     PRIMARY KEY CLUSTERED ([id] ASC);
 GO
 
--- Creating primary key on [idGrupo], [idTipoAsignacion], [idTipoRestriccion] in table 'Grupo_Restriccion'
-ALTER TABLE [dbo].[Grupo_Restriccion]
-ADD CONSTRAINT [PK_Grupo_Restriccion]
+-- Creating primary key on [id] in table 'Grupo_Evaluacions'
+ALTER TABLE [dbo].[Grupo_Evaluacions]
+ADD CONSTRAINT [PK_Grupo_Evaluacions]
+    PRIMARY KEY CLUSTERED ([id] ASC);
+GO
+
+-- Creating primary key on [idGrupo], [idTipoAsignacion], [idTipoRestriccion] in table 'Grupo_Restricciones'
+ALTER TABLE [dbo].[Grupo_Restricciones]
+ADD CONSTRAINT [PK_Grupo_Restricciones]
     PRIMARY KEY CLUSTERED ([idGrupo], [idTipoAsignacion], [idTipoRestriccion] ASC);
 GO
 
--- Creating primary key on [id] in table 'Institucion'
-ALTER TABLE [dbo].[Institucion]
-ADD CONSTRAINT [PK_Institucion]
+-- Creating primary key on [id] in table 'Instituciones'
+ALTER TABLE [dbo].[Instituciones]
+ADD CONSTRAINT [PK_Instituciones]
     PRIMARY KEY CLUSTERED ([id] ASC);
 GO
 
@@ -403,15 +404,15 @@ ADD CONSTRAINT [PK_Perfil]
     PRIMARY KEY CLUSTERED ([id] ASC);
 GO
 
--- Creating primary key on [id] in table 'Tipo_Restriccion'
-ALTER TABLE [dbo].[Tipo_Restriccion]
-ADD CONSTRAINT [PK_Tipo_Restriccion]
+-- Creating primary key on [id] in table 'Tipo_Restricciones'
+ALTER TABLE [dbo].[Tipo_Restricciones]
+ADD CONSTRAINT [PK_Tipo_Restricciones]
     PRIMARY KEY CLUSTERED ([id] ASC);
 GO
 
--- Creating primary key on [id] in table 'TipoAsignacion'
-ALTER TABLE [dbo].[TipoAsignacion]
-ADD CONSTRAINT [PK_TipoAsignacion]
+-- Creating primary key on [id] in table 'TipoAsignaciones'
+ALTER TABLE [dbo].[TipoAsignaciones]
+ADD CONSTRAINT [PK_TipoAsignaciones]
     PRIMARY KEY CLUSTERED ([id] ASC);
 GO
 
@@ -431,50 +432,50 @@ GO
 -- Creating all FOREIGN KEY constraints
 -- --------------------------------------------------
 
--- Creating foreign key on [idAsignacion] in table 'Asignacion_Archivo'
-ALTER TABLE [dbo].[Asignacion_Archivo]
+-- Creating foreign key on [idAsignacion] in table 'Asignacion_Archivos'
+ALTER TABLE [dbo].[Asignacion_Archivos]
 ADD CONSTRAINT [FK_Asignacion_Archivo_Asignacion]
     FOREIGN KEY ([idAsignacion])
-    REFERENCES [dbo].[Asignacion]
+    REFERENCES [dbo].[Asignaciones]
         ([id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_Asignacion_Archivo_Asignacion'
 CREATE INDEX [IX_FK_Asignacion_Archivo_Asignacion]
-ON [dbo].[Asignacion_Archivo]
+ON [dbo].[Asignacion_Archivos]
     ([idAsignacion]);
 GO
 
--- Creating foreign key on [idGrupo] in table 'Asignacion'
-ALTER TABLE [dbo].[Asignacion]
+-- Creating foreign key on [idGrupo] in table 'Asignaciones'
+ALTER TABLE [dbo].[Asignaciones]
 ADD CONSTRAINT [FK_Asignacion_Grupo]
     FOREIGN KEY ([idGrupo])
-    REFERENCES [dbo].[Grupo]
+    REFERENCES [dbo].[Grupos]
         ([id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_Asignacion_Grupo'
 CREATE INDEX [IX_FK_Asignacion_Grupo]
-ON [dbo].[Asignacion]
+ON [dbo].[Asignaciones]
     ([idGrupo]);
 GO
 
--- Creating foreign key on [idTipoAsignacion] in table 'Asignacion'
-ALTER TABLE [dbo].[Asignacion]
+-- Creating foreign key on [idTipoAsignacion] in table 'Asignaciones'
+ALTER TABLE [dbo].[Asignaciones]
 ADD CONSTRAINT [FK_Asignacion_TipoAsignacion]
     FOREIGN KEY ([idTipoAsignacion])
-    REFERENCES [dbo].[TipoAsignacion]
+    REFERENCES [dbo].[TipoAsignaciones]
         ([id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_Asignacion_TipoAsignacion'
 CREATE INDEX [IX_FK_Asignacion_TipoAsignacion]
-ON [dbo].[Asignacion]
+ON [dbo].[Asignaciones]
     ([idTipoAsignacion]);
 GO
 
--- Creating foreign key on [idUsuarioAsignacion] in table 'Asignacion'
-ALTER TABLE [dbo].[Asignacion]
+-- Creating foreign key on [idUsuarioAsignacion] in table 'Asignaciones'
+ALTER TABLE [dbo].[Asignaciones]
 ADD CONSTRAINT [FK_Asignacion_Usuario]
     FOREIGN KEY ([idUsuarioAsignacion])
     REFERENCES [dbo].[Usuario]
@@ -483,54 +484,54 @@ ADD CONSTRAINT [FK_Asignacion_Usuario]
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_Asignacion_Usuario'
 CREATE INDEX [IX_FK_Asignacion_Usuario]
-ON [dbo].[Asignacion]
+ON [dbo].[Asignaciones]
     ([idUsuarioAsignacion]);
 GO
 
--- Creating foreign key on [idCategoria] in table 'Grado'
-ALTER TABLE [dbo].[Grado]
+-- Creating foreign key on [idCategoria] in table 'Grados'
+ALTER TABLE [dbo].[Grados]
 ADD CONSTRAINT [FK_Grado_Categoria]
     FOREIGN KEY ([idCategoria])
-    REFERENCES [dbo].[Categoria]
+    REFERENCES [dbo].[Categorias]
         ([id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_Grado_Categoria'
 CREATE INDEX [IX_FK_Grado_Categoria]
-ON [dbo].[Grado]
+ON [dbo].[Grados]
     ([idCategoria]);
 GO
 
--- Creating foreign key on [idCiudad] in table 'Institucion'
-ALTER TABLE [dbo].[Institucion]
+-- Creating foreign key on [idCiudad] in table 'Instituciones'
+ALTER TABLE [dbo].[Instituciones]
 ADD CONSTRAINT [FK_Institucion_Ciudad]
     FOREIGN KEY ([idCiudad])
-    REFERENCES [dbo].[Ciudad]
+    REFERENCES [dbo].[Ciudades]
         ([id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_Institucion_Ciudad'
 CREATE INDEX [IX_FK_Institucion_Ciudad]
-ON [dbo].[Institucion]
+ON [dbo].[Instituciones]
     ([idCiudad]);
 GO
 
--- Creating foreign key on [idGrupo] in table 'Comunicado'
-ALTER TABLE [dbo].[Comunicado]
+-- Creating foreign key on [idGrupo] in table 'Comunicados'
+ALTER TABLE [dbo].[Comunicados]
 ADD CONSTRAINT [FK_Comunicado_Grupo]
     FOREIGN KEY ([idGrupo])
-    REFERENCES [dbo].[Grupo]
+    REFERENCES [dbo].[Grupos]
         ([id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_Comunicado_Grupo'
 CREATE INDEX [IX_FK_Comunicado_Grupo]
-ON [dbo].[Comunicado]
+ON [dbo].[Comunicados]
     ([idGrupo]);
 GO
 
--- Creating foreign key on [idUsuarioComunicado] in table 'Comunicado'
-ALTER TABLE [dbo].[Comunicado]
+-- Creating foreign key on [idUsuarioComunicado] in table 'Comunicados'
+ALTER TABLE [dbo].[Comunicados]
 ADD CONSTRAINT [FK_Comunicado_Usuario]
     FOREIGN KEY ([idUsuarioComunicado])
     REFERENCES [dbo].[Usuario]
@@ -539,100 +540,100 @@ ADD CONSTRAINT [FK_Comunicado_Usuario]
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_Comunicado_Usuario'
 CREATE INDEX [IX_FK_Comunicado_Usuario]
-ON [dbo].[Comunicado]
+ON [dbo].[Comunicados]
     ([idUsuarioComunicado]);
 GO
 
--- Creating foreign key on [idGrado] in table 'Grupo'
-ALTER TABLE [dbo].[Grupo]
+-- Creating foreign key on [idGrado] in table 'Grupos'
+ALTER TABLE [dbo].[Grupos]
 ADD CONSTRAINT [FK_Grupo_Grado]
     FOREIGN KEY ([idGrado])
-    REFERENCES [dbo].[Grado]
+    REFERENCES [dbo].[Grados]
         ([id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_Grupo_Grado'
 CREATE INDEX [IX_FK_Grupo_Grado]
-ON [dbo].[Grupo]
+ON [dbo].[Grupos]
     ([idGrado]);
 GO
 
--- Creating foreign key on [idGradoN] in table 'Grupo'
-ALTER TABLE [dbo].[Grupo]
+-- Creating foreign key on [idGradoN] in table 'Grupos'
+ALTER TABLE [dbo].[Grupos]
 ADD CONSTRAINT [FK_Grupo_GradoN]
     FOREIGN KEY ([idGradoN])
-    REFERENCES [dbo].[GradoN]
+    REFERENCES [dbo].[GradoNs]
         ([id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_Grupo_GradoN'
 CREATE INDEX [IX_FK_Grupo_GradoN]
-ON [dbo].[Grupo]
+ON [dbo].[Grupos]
     ([idGradoN]);
 GO
 
--- Creating foreign key on [idGrupo] in table 'Grupo_Evaluacion'
-ALTER TABLE [dbo].[Grupo_Evaluacion]
+-- Creating foreign key on [idGrupo] in table 'Grupo_Evaluacions'
+ALTER TABLE [dbo].[Grupo_Evaluacions]
 ADD CONSTRAINT [FK_Grupo_Evaluacion_Grupo]
     FOREIGN KEY ([idGrupo])
-    REFERENCES [dbo].[Grupo]
+    REFERENCES [dbo].[Grupos]
         ([id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_Grupo_Evaluacion_Grupo'
 CREATE INDEX [IX_FK_Grupo_Evaluacion_Grupo]
-ON [dbo].[Grupo_Evaluacion]
+ON [dbo].[Grupo_Evaluacions]
     ([idGrupo]);
 GO
 
--- Creating foreign key on [idInstitucion] in table 'Grupo'
-ALTER TABLE [dbo].[Grupo]
+-- Creating foreign key on [idInstitucion] in table 'Grupos'
+ALTER TABLE [dbo].[Grupos]
 ADD CONSTRAINT [FK_Grupo_Institucion]
     FOREIGN KEY ([idInstitucion])
-    REFERENCES [dbo].[Institucion]
+    REFERENCES [dbo].[Instituciones]
         ([id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_Grupo_Institucion'
 CREATE INDEX [IX_FK_Grupo_Institucion]
-ON [dbo].[Grupo]
+ON [dbo].[Grupos]
     ([idInstitucion]);
 GO
 
--- Creating foreign key on [idGrupo] in table 'Grupo_Restriccion'
-ALTER TABLE [dbo].[Grupo_Restriccion]
+-- Creating foreign key on [idGrupo] in table 'Grupo_Restricciones'
+ALTER TABLE [dbo].[Grupo_Restricciones]
 ADD CONSTRAINT [FK_Grupo_Restriccion_Grupo]
     FOREIGN KEY ([idGrupo])
-    REFERENCES [dbo].[Grupo]
+    REFERENCES [dbo].[Grupos]
         ([id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
--- Creating foreign key on [idTipoRestriccion] in table 'Grupo_Restriccion'
-ALTER TABLE [dbo].[Grupo_Restriccion]
+-- Creating foreign key on [idTipoRestriccion] in table 'Grupo_Restricciones'
+ALTER TABLE [dbo].[Grupo_Restricciones]
 ADD CONSTRAINT [FK_Grupo_Restriccion_Tipo_Restriccion]
     FOREIGN KEY ([idTipoRestriccion])
-    REFERENCES [dbo].[Tipo_Restriccion]
+    REFERENCES [dbo].[Tipo_Restricciones]
         ([id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_Grupo_Restriccion_Tipo_Restriccion'
 CREATE INDEX [IX_FK_Grupo_Restriccion_Tipo_Restriccion]
-ON [dbo].[Grupo_Restriccion]
+ON [dbo].[Grupo_Restricciones]
     ([idTipoRestriccion]);
 GO
 
--- Creating foreign key on [idTipoAsignacion] in table 'Grupo_Restriccion'
-ALTER TABLE [dbo].[Grupo_Restriccion]
+-- Creating foreign key on [idTipoAsignacion] in table 'Grupo_Restricciones'
+ALTER TABLE [dbo].[Grupo_Restricciones]
 ADD CONSTRAINT [FK_Grupo_Restriccion_TipoAsignacion]
     FOREIGN KEY ([idTipoAsignacion])
-    REFERENCES [dbo].[TipoAsignacion]
+    REFERENCES [dbo].[TipoAsignaciones]
         ([id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_Grupo_Restriccion_TipoAsignacion'
 CREATE INDEX [IX_FK_Grupo_Restriccion_TipoAsignacion]
-ON [dbo].[Grupo_Restriccion]
+ON [dbo].[Grupo_Restricciones]
     ([idTipoAsignacion]);
 GO
 
@@ -640,7 +641,7 @@ GO
 ALTER TABLE [dbo].[Usuario]
 ADD CONSTRAINT [FK_Usuario_Institucion]
     FOREIGN KEY ([idInstitucion])
-    REFERENCES [dbo].[Institucion]
+    REFERENCES [dbo].[Instituciones]
         ([id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 
@@ -668,7 +669,7 @@ GO
 ALTER TABLE [dbo].[Usuario_Grupo]
 ADD CONSTRAINT [FK_Usuario_Grupo_Grupo]
     FOREIGN KEY ([Grupo_id])
-    REFERENCES [dbo].[Grupo]
+    REFERENCES [dbo].[Grupos]
         ([id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO

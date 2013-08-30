@@ -184,6 +184,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AsignaturaController.cs" />
+    <Compile Include="Controllers\CalendarioController.cs" />
     <Compile Include="Controllers\CategoriaController.cs" />
     <Compile Include="Controllers\CiudadController.cs" />
     <Compile Include="Controllers\GradoController.cs" />
@@ -451,6 +453,16 @@
     <Content Include="Views\Institucion\Create.cshtml" />
     <Content Include="Views\Institucion\Edit.cshtml" />
     <Content Include="Views\Institucion\Delete.cshtml" />
+    <Content Include="Views\Asignatura\Index.cshtml" />
+    <Content Include="Views\Asignatura\Details.cshtml" />
+    <Content Include="Views\Asignatura\Create.cshtml" />
+    <Content Include="Views\Asignatura\Edit.cshtml" />
+    <Content Include="Views\Asignatura\Delete.cshtml" />
+    <Content Include="Views\Calendario\Index.cshtml" />
+    <Content Include="Views\Calendario\Details.cshtml" />
+    <Content Include="Views\Calendario\Create.cshtml" />
+    <Content Include="Views\Calendario\Edit.cshtml" />
+    <Content Include="Views\Calendario\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

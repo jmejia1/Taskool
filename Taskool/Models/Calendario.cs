@@ -16,5 +16,6 @@ namespace Taskool.Models
     {
         public System.DateTime fecha { get; set; }
         public string tipoDia { get; set; }
+        public int id { get; set; }
     }
 }
