@@ -41,7 +41,7 @@ namespace Taskool.Controllers
         public ActionResult Create()
         {
             ViewBag.idGrupo = new SelectList(db.Grupos, "id", "urlImagen");
-            ViewBag.idUsuarioComunicado = new SelectList(db.Usuario, "id", "nombreUsuario");
+            ViewBag.idUsuarioComunicado = new SelectList(db.Usuarios, "id", "nombreUsuario");
             return View();
         }
 
@@ -60,7 +60,7 @@ namespace Taskool.Controllers
             }
 
             ViewBag.idGrupo = new SelectList(db.Grupos, "id", "urlImagen", comunicado.idGrupo);
-            ViewBag.idUsuarioComunicado = new SelectList(db.Usuario, "id", "nombreUsuario", comunicado.idUsuarioComunicado);
+            ViewBag.idUsuarioComunicado = new SelectList(db.Usuarios, "id", "nombreUsuario", comunicado.idUsuarioComunicado);
             return View(comunicado);
         }
 
@@ -75,7 +75,7 @@ namespace Taskool.Controllers
                 return HttpNotFound();
             }
             ViewBag.idGrupo = new SelectList(db.Grupos, "id", "urlImagen", comunicado.idGrupo);
-            ViewBag.idUsuarioComunicado = new SelectList(db.Usuario, "id", "nombreUsuario", comunicado.idUsuarioComunicado);
+            ViewBag.idUsuarioComunicado = new SelectList(db.Usuarios, "id", "nombreUsuario", comunicado.idUsuarioComunicado);
             return View(comunicado);
         }
 
@@ -93,7 +93,7 @@ namespace Taskool.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.idGrupo = new SelectList(db.Grupos, "id", "urlImagen", comunicado.idGrupo);
-            ViewBag.idUsuarioComunicado = new SelectList(db.Usuario, "id", "nombreUsuario", comunicado.idUsuarioComunicado);
+            ViewBag.idUsuarioComunicado = new SelectList(db.Usuarios, "id", "nombreUsuario", comunicado.idUsuarioComunicado);
             return View(comunicado);
         }
 

@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Taskool.Models.Grupo>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Institucion.nit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Grado.nombreGrado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GradoN.nombreGradoN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.estadoGrupo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.urlImagen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ordenCategoria)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Institucion.nit)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Grado.nombreGrado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GradoN.nombreGradoN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.estadoGrupo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.urlImagen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ordenCategoria)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

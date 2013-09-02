@@ -5,7 +5,6 @@
 
 <hgroup class="title">
     <h1>@ViewBag.Title.</h1>
-    <h2>Cree una cuenta nueva.</h2>
 </hgroup>
 
 @using (Html.BeginForm()) {
@@ -26,6 +25,14 @@
             <li>
                 @Html.LabelFor(m => m.ConfirmPassword)
                 @Html.PasswordFor(m => m.ConfirmPassword)
+            </li>
+            <li>
+                Institución
+                @Html.DropDownList("idInstitucion", ViewBag.InstitucionList as SelectList)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.email)
+                @Html.TextBoxFor(m => m.email)
             </li>
         </ol>
         <input type="submit" value="Registrarse" />

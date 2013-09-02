@@ -1,0 +1,61 @@
+﻿@model Taskool.Models.Grupo
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Grupo</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Institucion.nit)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Institucion.nit)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Grado.nombreGrado)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Grado.nombreGrado)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.GradoN.nombreGradoN)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.GradoN.nombreGradoN)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.estadoGrupo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.estadoGrupo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.urlImagen)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.urlImagen)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ordenCategoria)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ordenCategoria)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

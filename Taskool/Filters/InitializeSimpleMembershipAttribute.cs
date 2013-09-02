@@ -29,16 +29,17 @@ namespace Taskool.Filters
 
                 try
                 {
-                    using (var context = new UsersContext())
-                    {
-                        if (!context.Database.Exists())
-                        {
-                            // Crear la base de datos SimpleMembership sin el esquema de migración de Entity Framework
-                            ((IObjectContextAdapter)context).ObjectContext.CreateDatabase();
-                        }
-                    }
+                    //using (var context = new UsersContext())
+                    //{
+                    //    if (!context.Database.Exists())
+                    //    {
+                    //        // Crear la base de datos SimpleMembership sin el esquema de migración de Entity Framework
+                    //        ((IObjectContextAdapter)context).ObjectContext.CreateDatabase();
+                    //    }
+                    //}
 
-                    WebSecurity.InitializeDatabaseConnection("DefaultConnection", "UserProfile", "UserId", "UserName", autoCreateTables: true);
+                    //WebSecurity.InitializeDatabaseConnection("DefaultConnection", "UserProfile", "UserId", "UserName", autoCreateTables: true);
+                    WebSecurity.InitializeDatabaseConnection("DefaultConnection", "Usuario", "id", "nombreUsuario", autoCreateTables: true);
                 }
                 catch (Exception ex)
                 {

@@ -23,6 +23,7 @@
 </head>
 <body>
 
+     <!-- ////////////// NAVEGACION FIJA //////////////  -->
     <div class="fixed contain-to-grid">
         <!-- Navigation -->
         <nav class="top-bar" data-index="0">
@@ -31,7 +32,7 @@
                 <li class="name">
                     <h1>
                         <a href="/">
-                            <img src="/InfoHaceb/Images/LogoHaceb.png" />
+                            <img src="~/Images/bullet.png" />
                         </a>
                     </h1>
                 </li>
@@ -42,25 +43,30 @@
             <section class="top-bar-section">
                 <ul class="left">
                     <li>
-                        <a href="/InfoHaceb/Mensaje">Inicio</a>
+                        @Html.ActionLink("Inicio", "Index", "Home")
                     </li>
-
+@*                    <li>
+                        <a href="~/About">Acerca de</a>
+                    </li>*@
                 </ul>
                 <ul class="right">
-
-                    <li>
-                        <a href="/InfoHaceb/Account/Register" id="registerLink">Registrarse</a>
-                    </li>
-                    <li>
-                        <a href="/InfoHaceb/Account/Login" id="loginLink">Iniciar sesi&#243;n</a>
-                    </li>
-
-
+                    
+                        @Html.Partial("_LoginPartial")
+                                       
                 </ul>
             </section>
         </nav>
         <!-- End Navigation -->
     </div>
+    <br/>
+
+@*    <div class="row">
+        <div class="twelve columns">
+            <section id="login">
+                @Html.Partial("_LoginPartial")
+            </section>
+        </div>
+    </div>*@
 
     <div class="row">
         <div class="twelve columns">

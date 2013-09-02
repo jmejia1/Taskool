@@ -193,6 +193,8 @@
     <Compile Include="Controllers\ComunicadoController.cs" />
     <Compile Include="Controllers\GradoController.cs" />
     <Compile Include="Controllers\GradoNController.cs" />
+    <Compile Include="Controllers\GrupoController.cs" />
+    <Compile Include="Controllers\GrupoRestriccionController.cs" />
     <Compile Include="Controllers\Grupo_EvaluacionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InstitucionController.cs" />
@@ -240,9 +242,6 @@
       <DependentUpon>TaskoolModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Institucion.cs">
-      <DependentUpon>TaskoolModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Perfil.cs">
       <DependentUpon>TaskoolModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TaskoolModel.Context.cs">
@@ -505,6 +504,16 @@
     <Content Include="Views\TipoAsignacion\Create.cshtml" />
     <Content Include="Views\TipoAsignacion\Edit.cshtml" />
     <Content Include="Views\TipoAsignacion\Delete.cshtml" />
+    <Content Include="Views\GrupoRestriccion\Index.cshtml" />
+    <Content Include="Views\GrupoRestriccion\Details.cshtml" />
+    <Content Include="Views\GrupoRestriccion\Create.cshtml" />
+    <Content Include="Views\GrupoRestriccion\Edit.cshtml" />
+    <Content Include="Views\GrupoRestriccion\Delete.cshtml" />
+    <Content Include="Views\Grupo\Index.cshtml" />
+    <Content Include="Views\Grupo\Details.cshtml" />
+    <Content Include="Views\Grupo\Create.cshtml" />
+    <Content Include="Views\Grupo\Edit.cshtml" />
+    <Content Include="Views\Grupo\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

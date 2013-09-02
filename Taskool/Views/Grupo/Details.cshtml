@@ -1,0 +1,57 @@
+﻿@model Taskool.Models.Grupo
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Grupo</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Institucion.nit)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Institucion.nit)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Grado.nombreGrado)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Grado.nombreGrado)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.GradoN.nombreGradoN)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.GradoN.nombreGradoN)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.estadoGrupo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.estadoGrupo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.urlImagen)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.urlImagen)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ordenCategoria)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ordenCategoria)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

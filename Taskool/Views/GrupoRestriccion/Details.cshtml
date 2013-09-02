@@ -1,0 +1,43 @@
+﻿@model Taskool.Models.Grupo_Restriccion
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Grupo_Restriccion</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Grupo.urlImagen)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Grupo.urlImagen)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TipoAsignacion.nombreTipoAsignacion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TipoAsignacion.nombreTipoAsignacion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Tipo_Restriccion.nombreTipoRestriccion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Tipo_Restriccion.nombreTipoRestriccion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.numMaximoDia)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.numMaximoDia)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

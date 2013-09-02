@@ -1,0 +1,60 @@
+﻿@model Taskool.Models.Grupo_Restriccion
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Grupo_Restriccion</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.idGrupo, "Grupo")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("idGrupo", String.Empty)
+            @Html.ValidationMessageFor(model => model.idGrupo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.idTipoAsignacion, "TipoAsignacion")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("idTipoAsignacion", String.Empty)
+            @Html.ValidationMessageFor(model => model.idTipoAsignacion)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.idTipoRestriccion, "Tipo_Restriccion")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("idTipoRestriccion", String.Empty)
+            @Html.ValidationMessageFor(model => model.idTipoRestriccion)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.numMaximoDia)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.numMaximoDia)
+            @Html.ValidationMessageFor(model => model.numMaximoDia)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

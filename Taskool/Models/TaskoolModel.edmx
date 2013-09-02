@@ -19,10 +19,9 @@
     <EntitySet Name="Grupo_Evaluacions" EntityType="TareasModel.Store.Grupo_Evaluacions" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Grupo_Restricciones" EntityType="TareasModel.Store.Grupo_Restricciones" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Instituciones" EntityType="TareasModel.Store.Instituciones" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Perfil" EntityType="TareasModel.Store.Perfil" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Tipo_Restricciones" EntityType="TareasModel.Store.Tipo_Restricciones" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TipoAsignaciones" EntityType="TareasModel.Store.TipoAsignaciones" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Usuario" EntityType="TareasModel.Store.Usuario" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Usuarios" EntityType="TareasModel.Store.Usuarios" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Usuario_Grupo" EntityType="TareasModel.Store.Usuario_Grupo" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="FK_Asignacion_Archivo_Asignacion" Association="TareasModel.Store.FK_Asignacion_Archivo_Asignacion">
       <End Role="Asignacion" EntitySet="Asignaciones" />
@@ -37,7 +36,7 @@
       <End Role="Asignacion" EntitySet="Asignaciones" />
     </AssociationSet>
     <AssociationSet Name="FK_Asignacion_Usuario" Association="TareasModel.Store.FK_Asignacion_Usuario">
-      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Usuario" EntitySet="Usuarios" />
       <End Role="Asignacion" EntitySet="Asignaciones" />
     </AssociationSet>
     <AssociationSet Name="FK_Grado_Categoria" Association="TareasModel.Store.FK_Grado_Categoria">
@@ -53,7 +52,7 @@
       <End Role="Comunicado" EntitySet="Comunicados" />
     </AssociationSet>
     <AssociationSet Name="FK_Comunicado_Usuario" Association="TareasModel.Store.FK_Comunicado_Usuario">
-      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Usuario" EntitySet="Usuarios" />
       <End Role="Comunicado" EntitySet="Comunicados" />
     </AssociationSet>
     <AssociationSet Name="FK_Grupo_Grado" Association="TareasModel.Store.FK_Grupo_Grado">
@@ -86,18 +85,14 @@
     </AssociationSet>
     <AssociationSet Name="FK_Usuario_Institucion" Association="TareasModel.Store.FK_Usuario_Institucion">
       <End Role="Institucion" EntitySet="Instituciones" />
-      <End Role="Usuario" EntitySet="Usuario" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Usuario_Perfil" Association="TareasModel.Store.FK_Usuario_Perfil">
-      <End Role="Perfil" EntitySet="Perfil" />
-      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Usuario" EntitySet="Usuarios" />
     </AssociationSet>
     <AssociationSet Name="FK_Usuario_Grupo_Grupo" Association="TareasModel.Store.FK_Usuario_Grupo_Grupo">
       <End Role="Grupo" EntitySet="Grupos" />
       <End Role="Usuario_Grupo" EntitySet="Usuario_Grupo" />
     </AssociationSet>
     <AssociationSet Name="FK_Usuario_Grupo_Usuario" Association="TareasModel.Store.FK_Usuario_Grupo_Usuario">
-      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Usuario" EntitySet="Usuarios" />
       <End Role="Usuario_Grupo" EntitySet="Usuario_Grupo" />
     </AssociationSet>
   </EntityContainer>
@@ -239,13 +234,6 @@
     <Property Name="estadoInstitucion" Type="tinyint" Nullable="false" />
     <Property Name="fechaRegistro" Type="datetime" Nullable="false" />
   </EntityType>
-  <EntityType Name="Perfil">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="tinyint" Nullable="false" />
-    <Property Name="nombrePerfil" Type="varchar" Nullable="false" MaxLength="50" />
-  </EntityType>
   <EntityType Name="Tipo_Restricciones">
     <Key>
       <PropertyRef Name="id" />
@@ -261,16 +249,15 @@
     <Property Name="nombreTipoAsignacion" Type="varchar" Nullable="false" MaxLength="100" />
     <Property Name="numMaximoDia" Type="smallint" Nullable="false" />
   </EntityType>
-  <EntityType Name="Usuario">
+  <EntityType Name="Usuarios">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="idInstitucion" Type="int" Nullable="false" />
     <Property Name="nombreUsuario" Type="varchar" Nullable="false" MaxLength="100" />
-    <Property Name="idPerfil" Type="tinyint" Nullable="false" />
     <Property Name="email" Type="varchar" Nullable="false" MaxLength="100" />
-    <Property Name="password" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="password" Type="varchar" Nullable="true" MaxLength="30" />
     <Property Name="estadoUsuario" Type="tinyint" Nullable="false" />
     <Property Name="fechaRegistro" Type="datetime" Nullable="false" />
   </EntityType>
@@ -319,7 +306,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Asignacion_Usuario">
-    <End Role="Usuario" Type="TareasModel.Store.Usuario" Multiplicity="1" />
+    <End Role="Usuario" Type="TareasModel.Store.Usuarios" Multiplicity="1" />
     <End Role="Asignacion" Type="TareasModel.Store.Asignaciones" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Usuario">
@@ -367,7 +354,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Comunicado_Usuario">
-    <End Role="Usuario" Type="TareasModel.Store.Usuario" Multiplicity="1" />
+    <End Role="Usuario" Type="TareasModel.Store.Usuarios" Multiplicity="1" />
     <End Role="Comunicado" Type="TareasModel.Store.Comunicados" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Usuario">
@@ -464,25 +451,13 @@
   </Association>
   <Association Name="FK_Usuario_Institucion">
     <End Role="Institucion" Type="TareasModel.Store.Instituciones" Multiplicity="1" />
-    <End Role="Usuario" Type="TareasModel.Store.Usuario" Multiplicity="*" />
+    <End Role="Usuario" Type="TareasModel.Store.Usuarios" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Institucion">
         <PropertyRef Name="id" />
       </Principal>
       <Dependent Role="Usuario">
         <PropertyRef Name="idInstitucion" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Usuario_Perfil">
-    <End Role="Perfil" Type="TareasModel.Store.Perfil" Multiplicity="1" />
-    <End Role="Usuario" Type="TareasModel.Store.Usuario" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Perfil">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="Usuario">
-        <PropertyRef Name="idPerfil" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -500,7 +475,7 @@
   </Association>
   <Association Name="FK_Usuario_Grupo_Usuario">
     <End Role="Usuario_Grupo" Type="TareasModel.Store.Usuario_Grupo" Multiplicity="*" />
-    <End Role="Usuario" Type="TareasModel.Store.Usuario" Multiplicity="1" />
+    <End Role="Usuario" Type="TareasModel.Store.Usuarios" Multiplicity="1" />
     <ReferentialConstraint>
       <Principal Role="Usuario">
         <PropertyRef Name="id" />
@@ -528,10 +503,9 @@
           <EntitySet Name="Grupo_Evaluacions" EntityType="TareasModel.Grupo_Evaluacion" />
           <EntitySet Name="Grupo_Restricciones" EntityType="TareasModel.Grupo_Restriccion" />
           <EntitySet Name="Instituciones" EntityType="TareasModel.Institucion" />
-          <EntitySet Name="Perfil" EntityType="TareasModel.Perfil" />
           <EntitySet Name="Tipo_Restricciones" EntityType="TareasModel.Tipo_Restriccion" />
           <EntitySet Name="TipoAsignaciones" EntityType="TareasModel.TipoAsignacion" />
-          <EntitySet Name="Usuario" EntityType="TareasModel.Usuario" />
+          <EntitySet Name="Usuarios" EntityType="TareasModel.Usuario" />
           <AssociationSet Name="FK_Asignacion_Archivo_Asignacion" Association="TareasModel.FK_Asignacion_Archivo_Asignacion">
             <End Role="Asignacion" EntitySet="Asignaciones" />
             <End Role="Asignacion_Archivo" EntitySet="Asignacion_Archivos" />
@@ -545,7 +519,7 @@
             <End Role="Asignacion" EntitySet="Asignaciones" />
           </AssociationSet>
           <AssociationSet Name="FK_Asignacion_Usuario" Association="TareasModel.FK_Asignacion_Usuario">
-            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Usuario" EntitySet="Usuarios" />
             <End Role="Asignacion" EntitySet="Asignaciones" />
           </AssociationSet>
           <AssociationSet Name="FK_Grado_Categoria" Association="TareasModel.FK_Grado_Categoria">
@@ -561,7 +535,7 @@
             <End Role="Comunicado" EntitySet="Comunicados" />
           </AssociationSet>
           <AssociationSet Name="FK_Comunicado_Usuario" Association="TareasModel.FK_Comunicado_Usuario">
-            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Usuario" EntitySet="Usuarios" />
             <End Role="Comunicado" EntitySet="Comunicados" />
           </AssociationSet>
           <AssociationSet Name="FK_Grupo_Grado" Association="TareasModel.FK_Grupo_Grado">
@@ -594,15 +568,11 @@
           </AssociationSet>
           <AssociationSet Name="FK_Usuario_Institucion" Association="TareasModel.FK_Usuario_Institucion">
             <End Role="Institucion" EntitySet="Instituciones" />
-            <End Role="Usuario" EntitySet="Usuario" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Usuario_Perfil" Association="TareasModel.FK_Usuario_Perfil">
-            <End Role="Perfil" EntitySet="Perfil" />
-            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Usuario" EntitySet="Usuarios" />
           </AssociationSet>
           <AssociationSet Name="Usuario_Grupo" Association="TareasModel.Usuario_Grupo">
             <End Role="Grupo" EntitySet="Grupos" />
-            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Usuario" EntitySet="Usuarios" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Asignacion">
@@ -770,14 +740,6 @@
           <NavigationProperty Name="Grupo" Relationship="TareasModel.FK_Grupo_Institucion" FromRole="Institucion" ToRole="Grupo" />
           <NavigationProperty Name="Usuario" Relationship="TareasModel.FK_Usuario_Institucion" FromRole="Institucion" ToRole="Usuario" />
         </EntityType>
-        <EntityType Name="Perfil">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Byte" Nullable="false" />
-          <Property Name="nombrePerfil" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="Usuario" Relationship="TareasModel.FK_Usuario_Perfil" FromRole="Perfil" ToRole="Usuario" />
-        </EntityType>
         <EntityType Name="Tipo_Restriccion">
           <Key>
             <PropertyRef Name="id" />
@@ -803,15 +765,13 @@
           <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
           <Property Name="idInstitucion" Type="Int32" Nullable="false" />
           <Property Name="nombreUsuario" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
-          <Property Name="idPerfil" Type="Byte" Nullable="false" />
           <Property Name="email" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
-          <Property Name="password" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="password" Type="String" MaxLength="30" Unicode="false" FixedLength="false" Nullable="true" />
           <Property Name="estadoUsuario" Type="Byte" Nullable="false" />
           <Property Name="fechaRegistro" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="Asignacion" Relationship="TareasModel.FK_Asignacion_Usuario" FromRole="Usuario" ToRole="Asignacion" />
           <NavigationProperty Name="Comunicado" Relationship="TareasModel.FK_Comunicado_Usuario" FromRole="Usuario" ToRole="Comunicado" />
           <NavigationProperty Name="Institucion" Relationship="TareasModel.FK_Usuario_Institucion" FromRole="Usuario" ToRole="Institucion" />
-          <NavigationProperty Name="Perfil" Relationship="TareasModel.FK_Usuario_Perfil" FromRole="Usuario" ToRole="Perfil" />
           <NavigationProperty Name="Grupo" Relationship="TareasModel.Usuario_Grupo" FromRole="Usuario" ToRole="Grupo" />
         </EntityType>
         <Association Name="FK_Asignacion_Archivo_Asignacion">
@@ -1006,18 +966,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Usuario_Perfil">
-          <End Role="Perfil" Type="TareasModel.Perfil" Multiplicity="1" />
-          <End Role="Usuario" Type="TareasModel.Usuario" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Perfil">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="Usuario">
-              <PropertyRef Name="idPerfil" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="Usuario_Grupo">
           <End Role="Grupo" Type="TareasModel.Grupo" Multiplicity="*" />
           <End Role="Usuario" Type="TareasModel.Usuario" Multiplicity="*" />
@@ -1177,14 +1125,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Perfil">
-      <EntityTypeMapping TypeName="IsTypeOf(TareasModel.Perfil)">
-        <MappingFragment StoreEntitySet="Perfil">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="nombrePerfil" ColumnName="nombrePerfil" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Tipo_Restricciones">
       <EntityTypeMapping TypeName="IsTypeOf(TareasModel.Tipo_Restriccion)">
         <MappingFragment StoreEntitySet="Tipo_Restricciones">
@@ -1202,13 +1142,12 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Usuario">
+    <EntitySetMapping Name="Usuarios">
       <EntityTypeMapping TypeName="IsTypeOf(TareasModel.Usuario)">
-        <MappingFragment StoreEntitySet="Usuario">
+        <MappingFragment StoreEntitySet="Usuarios">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="idInstitucion" ColumnName="idInstitucion" />
           <ScalarProperty Name="nombreUsuario" ColumnName="nombreUsuario" />
-          <ScalarProperty Name="idPerfil" ColumnName="idPerfil" />
           <ScalarProperty Name="email" ColumnName="email" />
           <ScalarProperty Name="password" ColumnName="password" />
           <ScalarProperty Name="estadoUsuario" ColumnName="estadoUsuario" />

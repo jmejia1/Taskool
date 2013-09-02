@@ -15,17 +15,17 @@ namespace Taskool.Models
         {
         }
 
-        public DbSet<UserProfile> UserProfiles { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
     }
 
-    [Table("UserProfile")]
-    public class UserProfile
-    {
-        [Key]
-        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
-        public int UserId { get; set; }
-        public string UserName { get; set; }
-    }
+    //[Table("UserProfile")]
+    //public class UserProfile
+    //{
+    //    [Key]
+    //    [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
+    //    public int UserId { get; set; }
+    //    public string UserName { get; set; }
+    //}
 
     public class RegisterExternalLoginModel
     {
@@ -74,7 +74,7 @@ namespace Taskool.Models
     {
         [Required]
         [Display(Name = "Nombre de usuario")]
-        public string UserName { get; set; }
+        public string UserName { get; set; } 
 
         [Required]
         [StringLength(100, ErrorMessage = "El número de caracteres de {0} debe ser al menos {2}.", MinimumLength = 6)]
@@ -86,6 +86,20 @@ namespace Taskool.Models
         [Display(Name = "Confirmar contraseña")]
         [Compare("Password", ErrorMessage = "La contraseña y la contraseña de confirmación no coinciden.")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        [Display(Name = "Institución")]
+        //public Institucion Institucion { get; set; }
+        public int? idInstitucion { get; set; }
+
+        [Required]
+        [DataType(DataType.EmailAddress)]
+        [Display(Name = "Email")]
+        public string email { get; set; }
+
+        public byte estadoUsuario { get; set; }
+        public System.DateTime fechaRegistro { get; set; }
+
     }
 
     public class ExternalLogin

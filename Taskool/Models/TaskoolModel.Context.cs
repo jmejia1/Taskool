@@ -38,9 +38,8 @@ namespace Taskool.Models
         public DbSet<Grupo_Evaluacion> Grupo_Evaluacions { get; set; }
         public DbSet<Grupo_Restriccion> Grupo_Restricciones { get; set; }
         public DbSet<Institucion> Instituciones { get; set; }
-        public DbSet<Perfil> Perfil { get; set; }
         public DbSet<Tipo_Restriccion> Tipo_Restricciones { get; set; }
         public DbSet<TipoAsignacion> TipoAsignaciones { get; set; }
-        public DbSet<Usuario> Usuario { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
     }
 }

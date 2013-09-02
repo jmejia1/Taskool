@@ -42,7 +42,7 @@ namespace Taskool.Controllers
         {
             ViewBag.idGrupo = new SelectList(db.Grupos, "id", "urlImagen");
             ViewBag.idTipoAsignacion = new SelectList(db.TipoAsignaciones, "id", "nombreTipoAsignacion");
-            ViewBag.idUsuarioAsignacion = new SelectList(db.Usuario, "id", "nombreUsuario");
+            ViewBag.idUsuarioAsignacion = new SelectList(db.Usuarios, "id", "nombreUsuario");
             return View();
         }
 
@@ -62,7 +62,7 @@ namespace Taskool.Controllers
 
             ViewBag.idGrupo = new SelectList(db.Grupos, "id", "urlImagen", asignacion.idGrupo);
             ViewBag.idTipoAsignacion = new SelectList(db.TipoAsignaciones, "id", "nombreTipoAsignacion", asignacion.idTipoAsignacion);
-            ViewBag.idUsuarioAsignacion = new SelectList(db.Usuario, "id", "nombreUsuario", asignacion.idUsuarioAsignacion);
+            ViewBag.idUsuarioAsignacion = new SelectList(db.Usuarios, "id", "nombreUsuario", asignacion.idUsuarioAsignacion);
             return View(asignacion);
         }
 
@@ -78,7 +78,7 @@ namespace Taskool.Controllers
             }
             ViewBag.idGrupo = new SelectList(db.Grupos, "id", "urlImagen", asignacion.idGrupo);
             ViewBag.idTipoAsignacion = new SelectList(db.TipoAsignaciones, "id", "nombreTipoAsignacion", asignacion.idTipoAsignacion);
-            ViewBag.idUsuarioAsignacion = new SelectList(db.Usuario, "id", "nombreUsuario", asignacion.idUsuarioAsignacion);
+            ViewBag.idUsuarioAsignacion = new SelectList(db.Usuarios, "id", "nombreUsuario", asignacion.idUsuarioAsignacion);
             return View(asignacion);
         }
 
@@ -97,7 +97,7 @@ namespace Taskool.Controllers
             }
             ViewBag.idGrupo = new SelectList(db.Grupos, "id", "urlImagen", asignacion.idGrupo);
             ViewBag.idTipoAsignacion = new SelectList(db.TipoAsignaciones, "id", "nombreTipoAsignacion", asignacion.idTipoAsignacion);
-            ViewBag.idUsuarioAsignacion = new SelectList(db.Usuario, "id", "nombreUsuario", asignacion.idUsuarioAsignacion);
+            ViewBag.idUsuarioAsignacion = new SelectList(db.Usuarios, "id", "nombreUsuario", asignacion.idUsuarioAsignacion);
             return View(asignacion);
         }
 

@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
 -- --------------------------------------------------
--- Date Created: 08/30/2013 11:05:39
--- Generated from EDMX file: D:\Datos\Personales\GitHub\Taskool\Taskool\Models\TaskoolModel.edmx
+-- Date Created: 09/02/2013 15:16:50
+-- Generated from EDMX file: C:\Users\jonattanmej\Documents\Visual Studio 2012\Projects\Taskool\Taskool\Models\TaskoolModel.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -63,10 +63,7 @@ IF OBJECT_ID(N'[dbo].[FK_Grupo_Restriccion_TipoAsignacion]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Grupo_Restricciones] DROP CONSTRAINT [FK_Grupo_Restriccion_TipoAsignacion];
 GO
 IF OBJECT_ID(N'[dbo].[FK_Usuario_Institucion]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Usuario] DROP CONSTRAINT [FK_Usuario_Institucion];
-GO
-IF OBJECT_ID(N'[dbo].[FK_Usuario_Perfil]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Usuario] DROP CONSTRAINT [FK_Usuario_Perfil];
+    ALTER TABLE [dbo].[Usuarios] DROP CONSTRAINT [FK_Usuario_Institucion];
 GO
 IF OBJECT_ID(N'[dbo].[FK_Usuario_Grupo_Grupo]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Usuario_Grupo] DROP CONSTRAINT [FK_Usuario_Grupo_Grupo];
@@ -118,17 +115,14 @@ GO
 IF OBJECT_ID(N'[dbo].[Instituciones]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Instituciones];
 GO
-IF OBJECT_ID(N'[dbo].[Perfil]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Perfil];
-GO
 IF OBJECT_ID(N'[dbo].[Tipo_Restricciones]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Tipo_Restricciones];
 GO
 IF OBJECT_ID(N'[dbo].[TipoAsignaciones]', 'U') IS NOT NULL
     DROP TABLE [dbo].[TipoAsignaciones];
 GO
-IF OBJECT_ID(N'[dbo].[Usuario]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Usuario];
+IF OBJECT_ID(N'[dbo].[Usuarios]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Usuarios];
 GO
 IF OBJECT_ID(N'[dbo].[Usuario_Grupo]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Usuario_Grupo];
@@ -274,13 +268,6 @@ CREATE TABLE [dbo].[Instituciones] (
 );
 GO
 
--- Creating table 'Perfil'
-CREATE TABLE [dbo].[Perfil] (
-    [id] tinyint  NOT NULL,
-    [nombrePerfil] varchar(50)  NOT NULL
-);
-GO
-
 -- Creating table 'Tipo_Restricciones'
 CREATE TABLE [dbo].[Tipo_Restricciones] (
     [id] smallint IDENTITY(1,1) NOT NULL,
@@ -296,14 +283,13 @@ CREATE TABLE [dbo].[TipoAsignaciones] (
 );
 GO
 
--- Creating table 'Usuario'
-CREATE TABLE [dbo].[Usuario] (
+-- Creating table 'Usuarios'
+CREATE TABLE [dbo].[Usuarios] (
     [id] int IDENTITY(1,1) NOT NULL,
     [idInstitucion] int  NOT NULL,
     [nombreUsuario] varchar(100)  NOT NULL,
-    [idPerfil] tinyint  NOT NULL,
     [email] varchar(100)  NOT NULL,
-    [password] varchar(30)  NOT NULL,
+    [password] varchar(30)  NULL,
     [estadoUsuario] tinyint  NOT NULL,
     [fechaRegistro] datetime  NOT NULL
 );
@@ -398,12 +384,6 @@ ADD CONSTRAINT [PK_Instituciones]
     PRIMARY KEY CLUSTERED ([id] ASC);
 GO
 
--- Creating primary key on [id] in table 'Perfil'
-ALTER TABLE [dbo].[Perfil]
-ADD CONSTRAINT [PK_Perfil]
-    PRIMARY KEY CLUSTERED ([id] ASC);
-GO
-
 -- Creating primary key on [id] in table 'Tipo_Restricciones'
 ALTER TABLE [dbo].[Tipo_Restricciones]
 ADD CONSTRAINT [PK_Tipo_Restricciones]
@@ -416,9 +396,9 @@ ADD CONSTRAINT [PK_TipoAsignaciones]
     PRIMARY KEY CLUSTERED ([id] ASC);
 GO
 
--- Creating primary key on [id] in table 'Usuario'
-ALTER TABLE [dbo].[Usuario]
-ADD CONSTRAINT [PK_Usuario]
+-- Creating primary key on [id] in table 'Usuarios'
+ALTER TABLE [dbo].[Usuarios]
+ADD CONSTRAINT [PK_Usuarios]
     PRIMARY KEY CLUSTERED ([id] ASC);
 GO
 
@@ -478,7 +458,7 @@ GO
 ALTER TABLE [dbo].[Asignaciones]
 ADD CONSTRAINT [FK_Asignacion_Usuario]
     FOREIGN KEY ([idUsuarioAsignacion])
-    REFERENCES [dbo].[Usuario]
+    REFERENCES [dbo].[Usuarios]
         ([id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 
@@ -534,7 +514,7 @@ GO
 ALTER TABLE [dbo].[Comunicados]
 ADD CONSTRAINT [FK_Comunicado_Usuario]
     FOREIGN KEY ([idUsuarioComunicado])
-    REFERENCES [dbo].[Usuario]
+    REFERENCES [dbo].[Usuarios]
         ([id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 
@@ -637,8 +617,8 @@ ON [dbo].[Grupo_Restricciones]
     ([idTipoAsignacion]);
 GO
 
--- Creating foreign key on [idInstitucion] in table 'Usuario'
-ALTER TABLE [dbo].[Usuario]
+-- Creating foreign key on [idInstitucion] in table 'Usuarios'
+ALTER TABLE [dbo].[Usuarios]
 ADD CONSTRAINT [FK_Usuario_Institucion]
     FOREIGN KEY ([idInstitucion])
     REFERENCES [dbo].[Instituciones]
@@ -647,22 +627,8 @@ ADD CONSTRAINT [FK_Usuario_Institucion]
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_Usuario_Institucion'
 CREATE INDEX [IX_FK_Usuario_Institucion]
-ON [dbo].[Usuario]
+ON [dbo].[Usuarios]
     ([idInstitucion]);
-GO
-
--- Creating foreign key on [idPerfil] in table 'Usuario'
-ALTER TABLE [dbo].[Usuario]
-ADD CONSTRAINT [FK_Usuario_Perfil]
-    FOREIGN KEY ([idPerfil])
-    REFERENCES [dbo].[Perfil]
-        ([id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-
--- Creating non-clustered index for FOREIGN KEY 'FK_Usuario_Perfil'
-CREATE INDEX [IX_FK_Usuario_Perfil]
-ON [dbo].[Usuario]
-    ([idPerfil]);
 GO
 
 -- Creating foreign key on [Grupo_id] in table 'Usuario_Grupo'
@@ -678,7 +644,7 @@ GO
 ALTER TABLE [dbo].[Usuario_Grupo]
 ADD CONSTRAINT [FK_Usuario_Grupo_Usuario]
     FOREIGN KEY ([Usuario_id])
-    REFERENCES [dbo].[Usuario]
+    REFERENCES [dbo].[Usuarios]
         ([id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 

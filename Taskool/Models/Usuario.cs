@@ -24,7 +24,6 @@ namespace Taskool.Models
         public int id { get; set; }
         public int idInstitucion { get; set; }
         public string nombreUsuario { get; set; }
-        public byte idPerfil { get; set; }
         public string email { get; set; }
         public string password { get; set; }
         public byte estadoUsuario { get; set; }
@@ -33,7 +32,6 @@ namespace Taskool.Models
         public virtual ICollection<Asignacion> Asignacion { get; set; }
         public virtual ICollection<Comunicado> Comunicado { get; set; }
         public virtual Institucion Institucion { get; set; }
-        public virtual Perfil Perfil { get; set; }
         public virtual ICollection<Grupo> Grupo { get; set; }
     }
 }

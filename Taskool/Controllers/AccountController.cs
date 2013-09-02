@@ -63,6 +63,8 @@ namespace Taskool.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
+            TareasEntities db = new TareasEntities();
+            ViewBag.InstitucionList = new SelectList(db.Instituciones, "id", "razonSocial");
             return View();
         }
 
@@ -79,8 +81,12 @@ namespace Taskool.Controllers
                 // Intento de registrar al usuario
                 try
                 {
-                    WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
-                    WebSecurity.Login(model.UserName, model.Password);
+                    TareasEntities db = new TareasEntities();
+                    ViewBag.InstitucionList = new SelectList(db.Instituciones, "id", "razonSocial", model.idInstitucion);
+
+                    WebSecurity.CreateUserAndAccount(model.UserName, model.Password, new { email = model.email, idInstitucion = model.idInstitucion, estadoUsuario = 0, fechaRegistro = DateTime.Now }, false); 
+                    //WebSecurity.Login(model.nombreUsuario, model.password);
+                    
                     return RedirectToAction("Index", "Home");
                 }
                 catch (MembershipCreateUserException e)
@@ -200,6 +206,9 @@ namespace Taskool.Controllers
             return View(model);
         }
 
+
+        #region Login Methods
+
         //
         // POST: /Account/ExternalLogin
 
@@ -265,12 +274,12 @@ namespace Taskool.Controllers
                 // Insertar un nuevo usuario en la base de datos
                 using (UsersContext db = new UsersContext())
                 {
-                    UserProfile user = db.UserProfiles.FirstOrDefault(u => u.UserName.ToLower() == model.UserName.ToLower());
+                    Usuario user = db.Usuarios.FirstOrDefault(u => u.nombreUsuario.ToLower() == model.UserName.ToLower());
                     // Comprobar si el usuario ya existe
                     if (user == null)
                     {
                         // Insertar el nombre en la tabla de perfiles
-                        db.UserProfiles.Add(new UserProfile { UserName = model.UserName });
+                        db.Usuarios.Add(new Usuario { nombreUsuario = model.UserName });
                         db.SaveChanges();
 
                         OAuthWebSecurity.CreateOrUpdateAccount(provider, providerUserId, model.UserName);
@@ -327,6 +336,8 @@ namespace Taskool.Controllers
             ViewBag.ShowRemoveButton = externalLogins.Count > 1 || OAuthWebSecurity.HasLocalAccount(WebSecurity.GetUserId(User.Identity.Name));
             return PartialView("_RemoveExternalLoginsPartial", externalLogins);
         }
+
+#endregion
 
         #region Aplicaciones auxiliares
         private ActionResult RedirectToLocal(string returnUrl)
