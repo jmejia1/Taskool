@@ -1,0 +1,103 @@
+﻿@model IEnumerable<Taskool.Models.Asignacion>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="twelve">
+    <thead>
+        <tr>
+            <th>
+              Grupo
+            </th>
+            <th>
+                Nombre Usuario
+            </th>
+            <th>
+               Titulo
+            </th>
+            <th>
+                Detalle
+            </th>
+            <th>
+               Asignatura
+            </th>
+            <th>
+                Fecha Asignación
+            </th>
+            <th>
+                Fecha Entrega
+            </th>
+            <th>
+                Nombre Tipo Asignación
+            </th>
+            <th>
+               Fecha Registro
+            </th>
+            <th>
+               Estado Asignación
+            </th>
+            <th>
+                Fecha Modificación
+            </th>
+            <th>
+                Fecha Eliminación
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Grupo.urlImagen)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Usuario.nombreUsuario)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.titulo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.detalle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.idAsignatura)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fechaAsignacion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fechaEntrega)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TipoAsignacion.nombreTipoAsignacion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fechaRegistro)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.estadoAsignacion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fechaModificacion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fechaEliminacion)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                </td>
+            </tr>
+   
+        }
+    </tbody>
+</table>

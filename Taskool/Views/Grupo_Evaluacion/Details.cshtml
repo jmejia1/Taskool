@@ -1,0 +1,36 @@
+﻿@model Taskool.Models.Grupo_Evaluacion
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Grupo_Evaluacion</legend>
+
+    <div class="display-label">
+        Grupo
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Grupo.urlImagen)
+    </div>
+
+    <div class="display-label">
+        Fecha Inicial
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fechaInicial)
+    </div>
+
+    <div class="display-label">
+       Fecha Final
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fechaFinal)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

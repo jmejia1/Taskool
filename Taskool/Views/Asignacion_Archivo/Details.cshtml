@@ -1,0 +1,64 @@
+﻿@model Taskool.Models.Asignacion_Archivo
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Asignacion_Archivo</legend>
+
+    <div class="display-label">
+         Asignacion
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Asignacion.titulo)
+    </div>
+
+    <div class="display-label">
+        Nmbre Archivo
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nombreArchivo)
+    </div>
+
+    <div class="display-label">
+        Path Archivo
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.pathArchivo)
+    </div>
+
+    <div class="display-label">
+         Num. Descargas
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.numDescargas)
+    </div>
+
+    <div class="display-label">
+        Fecha Registro
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fechaRegistro)
+    </div>
+
+    <div class="display-label">
+         Estado Archivo
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.estadoArchivo)
+    </div>
+
+    <div class="display-label">
+        Fecha Eliminación
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fechaEliminacion)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

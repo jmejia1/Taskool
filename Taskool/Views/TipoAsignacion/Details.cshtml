@@ -1,0 +1,29 @@
+﻿@model Taskool.Models.TipoAsignacion
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>TipoAsignacion</legend>
+
+    <div class="display-label">
+          Tipo Asignación
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nombreTipoAsignacion)
+    </div>
+
+    <div class="display-label">
+        Num. Máximo Día
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.numMaximoDia)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

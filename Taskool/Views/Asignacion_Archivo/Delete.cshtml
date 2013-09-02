@@ -1,4 +1,4 @@
-﻿@model Taskool.Models.Institucion
+﻿@model Taskool.Models.Asignacion_Archivo
 
 @{
     ViewBag.Title = "Delete";
@@ -8,68 +8,61 @@
 
 <h3>Are you sure you want to delete this?</h3>
 <fieldset>
-    <legend>Institucion</legend>
+    <legend>Asignacion_Archivo</legend>
 
     <div class="display-label">
-          NIT
+        Asignación
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.nit)
+        @Html.DisplayFor(model => model.Asignacion.titulo)
     </div>
 
     <div class="display-label">
-         Razon Social
+        Nombre Archivo
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.razonSocial)
+        @Html.DisplayFor(model => model.nombreArchivo)
     </div>
 
     <div class="display-label">
-       Dirección
+         Path Archivo
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.direccion)
+        @Html.DisplayFor(model => model.pathArchivo)
     </div>
 
     <div class="display-label">
-        Telefono 1
+         Num. Descargas
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.telefono1)
+        @Html.DisplayFor(model => model.numDescargas)
     </div>
 
     <div class="display-label">
-         Telefono 2
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.telefono2)
-    </div>
-
-    <div class="display-label">
-         Ciudad
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Ciudad.nombreCiudad)
-    </div>
-
-    <div class="display-label">
-         Estado Institución
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.estadoInstitucion)
-    </div>
-
-    <div class="display-label">
-        Fecha Registro
+         Fecha Registro
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.fechaRegistro)
+    </div>
+
+    <div class="display-label">
+        Estado Archivo
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.estadoArchivo)
+    </div>
+
+    <div class="display-label">
+        Fecha Eliminación
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fechaEliminacion)
     </div>
 </fieldset>
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
     <p>
         <input type="submit" value="Delete"  class = "round small button"/> |
-        @Html.ActionLink("Regresar a la lista", "Index")
+        @Html.ActionLink("Back to List", "Index")
     </p>
 }

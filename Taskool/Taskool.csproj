@@ -184,6 +184,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AsignacionController.cs" />
+    <Compile Include="Controllers\Asignacion_ArchivoController.cs" />
     <Compile Include="Controllers\AsignaturaController.cs" />
     <Compile Include="Controllers\CalendarioController.cs" />
     <Compile Include="Controllers\CategoriaController.cs" />
@@ -191,8 +193,10 @@
     <Compile Include="Controllers\ComunicadoController.cs" />
     <Compile Include="Controllers\GradoController.cs" />
     <Compile Include="Controllers\GradoNController.cs" />
+    <Compile Include="Controllers\Grupo_EvaluacionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InstitucionController.cs" />
+    <Compile Include="Controllers\TipoAsignacionController.cs" />
     <Compile Include="Controllers\TipoRestriccionController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
@@ -481,6 +485,26 @@
     <Content Include="Views\Comunicado\Create.cshtml" />
     <Content Include="Views\Comunicado\Edit.cshtml" />
     <Content Include="Views\Comunicado\Delete.cshtml" />
+    <Content Include="Views\Grupo_Evaluacion\Index.cshtml" />
+    <Content Include="Views\Grupo_Evaluacion\Details.cshtml" />
+    <Content Include="Views\Grupo_Evaluacion\Create.cshtml" />
+    <Content Include="Views\Grupo_Evaluacion\Edit.cshtml" />
+    <Content Include="Views\Grupo_Evaluacion\Delete.cshtml" />
+    <Content Include="Views\Asignacion_Archivo\Index.cshtml" />
+    <Content Include="Views\Asignacion_Archivo\Details.cshtml" />
+    <Content Include="Views\Asignacion_Archivo\Create.cshtml" />
+    <Content Include="Views\Asignacion_Archivo\Edit.cshtml" />
+    <Content Include="Views\Asignacion_Archivo\Delete.cshtml" />
+    <Content Include="Views\Asignacion\Index.cshtml" />
+    <Content Include="Views\Asignacion\Details.cshtml" />
+    <Content Include="Views\Asignacion\Create.cshtml" />
+    <Content Include="Views\Asignacion\Edit.cshtml" />
+    <Content Include="Views\Asignacion\Delete.cshtml" />
+    <Content Include="Views\TipoAsignacion\Index.cshtml" />
+    <Content Include="Views\TipoAsignacion\Details.cshtml" />
+    <Content Include="Views\TipoAsignacion\Create.cshtml" />
+    <Content Include="Views\TipoAsignacion\Edit.cshtml" />
+    <Content Include="Views\TipoAsignacion\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

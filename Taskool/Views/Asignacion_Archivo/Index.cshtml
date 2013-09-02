@@ -1,0 +1,73 @@
+﻿@model IEnumerable<Taskool.Models.Asignacion_Archivo>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="twelve">
+    <thead>
+        <tr>
+            <th>
+                 Titulo
+            </th>
+            <th>
+                Nombre Archivo
+            </th>
+            <th>
+                Path Archivo
+            </th>
+            <th>
+                Num. Descargas
+            </th>
+            <th>
+                Fecha Registro
+            </th>
+            <th>
+                Estado Archivo
+            </th>
+            <th>
+               Fecha Eliminación
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Asignacion.titulo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nombreArchivo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.pathArchivo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.numDescargas)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fechaRegistro)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.estadoArchivo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fechaEliminacion)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>

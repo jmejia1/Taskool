@@ -1,0 +1,40 @@
+﻿@model Taskool.Models.Grupo_Evaluacion
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Grupo_Evaluacion</legend>
+
+    <div class="display-label">
+        Grupo
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Grupo.urlImagen)
+    </div>
+
+    <div class="display-label">
+         Fecha Inicial
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fechaInicial)
+    </div>
+
+    <div class="display-label">
+        Fecha Final
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fechaFinal)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" class = "round small button"/> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

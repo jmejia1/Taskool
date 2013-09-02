@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Taskool.Models.TipoAsignacion>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="twelve">
+    <thead>
+        <tr>
+            <th>Tipo Asignación
+            </th>
+            <th>Num. Máximo Día
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nombreTipoAsignacion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.numMaximoDia)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

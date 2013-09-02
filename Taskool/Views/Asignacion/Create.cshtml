@@ -1,0 +1,124 @@
+﻿@model Taskool.Models.Asignacion
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Asignacion</legend>
+
+        <div class="editor-label">
+            Grupo
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("idGrupo", String.Empty)
+            @Html.ValidationMessageFor(model => model.idGrupo)
+        </div>
+
+        <div class="editor-label">
+           Usuario
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("idUsuarioAsignacion", String.Empty)
+            @Html.ValidationMessageFor(model => model.idUsuarioAsignacion)
+        </div>
+
+        <div class="editor-label">
+            Titulo
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.titulo)
+            @Html.ValidationMessageFor(model => model.titulo)
+        </div>
+
+        <div class="editor-label">
+           Detalle
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.detalle)
+            @Html.ValidationMessageFor(model => model.detalle)
+        </div>
+
+        <div class="editor-label">
+           Asignatura
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.idAsignatura)
+            @Html.ValidationMessageFor(model => model.idAsignatura)
+        </div>
+
+        <div class="editor-label">
+           Fecha Asignación
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.fechaAsignacion)
+            @Html.ValidationMessageFor(model => model.fechaAsignacion)
+        </div>
+
+        <div class="editor-label">
+          Fecha Entrega
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.fechaEntrega)
+            @Html.ValidationMessageFor(model => model.fechaEntrega)
+        </div>
+
+        <div class="editor-label">
+           Tipo Asignación
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("idTipoAsignacion", String.Empty)
+            @Html.ValidationMessageFor(model => model.idTipoAsignacion)
+        </div>
+
+        <div class="editor-label">
+          Fecha Registro
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.fechaRegistro)
+            @Html.ValidationMessageFor(model => model.fechaRegistro)
+        </div>
+
+        <div class="editor-label">
+           Estado Asignación
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.estadoAsignacion)
+            @Html.ValidationMessageFor(model => model.estadoAsignacion)
+        </div>
+
+        <div class="editor-label">
+            Fecha Modificación
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.fechaModificacion)
+            @Html.ValidationMessageFor(model => model.fechaModificacion)
+        </div>
+
+        <div class="editor-label">
+           Fecha Eliminación
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.fechaEliminacion)
+            @Html.ValidationMessageFor(model => model.fechaEliminacion)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" class = "round small button" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

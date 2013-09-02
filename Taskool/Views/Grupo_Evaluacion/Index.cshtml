@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Taskool.Models.Grupo_Evaluacion>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="twelve">
+    <thead>
+        <tr>
+            <th>Grupo
+            </th>
+            <th>Fecha Inicial
+            </th>
+            <th>Fecha Final
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Grupo.urlImagen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fechaInicial)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fechaFinal)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.id }, new { @class = "round small button" }) |
+            @Html.ActionLink("Details", "Details", new { id = item.id }, new { @class = "round small button" }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.id }, new { @class = "round small button" })
+        </td>
+    </tr>
+}
+    </tbody>
+
+</table>

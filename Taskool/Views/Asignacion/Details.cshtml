@@ -1,0 +1,99 @@
+﻿@model Taskool.Models.Asignacion
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Asignacion</legend>
+
+    <div class="display-label">
+      Grupo
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Grupo.urlImagen)
+    </div>
+
+    <div class="display-label">
+         Nombre Usuario
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Usuario.nombreUsuario)
+    </div>
+
+    <div class="display-label">
+         Titulo
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.titulo)
+    </div>
+
+    <div class="display-label">
+         Detalle
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.detalle)
+    </div>
+
+    <div class="display-label">
+         Asignatura
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.idAsignatura)
+    </div>
+
+    <div class="display-label">
+        Fecha Asignacion
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fechaAsignacion)
+    </div>
+
+    <div class="display-label">
+        Fecha Entrega
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fechaEntrega)
+    </div>
+
+    <div class="display-label">
+         Nombre Tipo Asignación
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TipoAsignacion.nombreTipoAsignacion)
+    </div>
+
+    <div class="display-label">
+        Fecha Registro
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fechaRegistro)
+    </div>
+
+    <div class="display-label">
+        Estado Asignación
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.estadoAsignacion)
+    </div>
+
+    <div class="display-label">
+        Fecha Modificación
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fechaModificacion)
+    </div>
+
+    <div class="display-label">
+        Fecha Eliminación
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fechaEliminacion)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
