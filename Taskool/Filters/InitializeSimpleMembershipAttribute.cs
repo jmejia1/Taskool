@@ -39,7 +39,7 @@ namespace Taskool.Filters
                     //}
 
                     //WebSecurity.InitializeDatabaseConnection("DefaultConnection", "UserProfile", "UserId", "UserName", autoCreateTables: true);
-                    WebSecurity.InitializeDatabaseConnection("DefaultConnection", "Usuario", "id", "nombreUsuario", autoCreateTables: true);
+                    WebSecurity.InitializeDatabaseConnection("DefaultConnection", "Usuarios", "id", "nombreUsuario", autoCreateTables: true);
                 }
                 catch (Exception ex)
                 {

@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
 -- --------------------------------------------------
--- Date Created: 09/02/2013 15:16:50
+-- Date Created: 09/06/2013 15:00:49
 -- Generated from EDMX file: C:\Users\jonattanmej\Documents\Visual Studio 2012\Projects\Taskool\Taskool\Models\TaskoolModel.edmx
 -- --------------------------------------------------
 

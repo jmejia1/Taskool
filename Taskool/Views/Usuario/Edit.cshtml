@@ -1,0 +1,98 @@
+﻿@model Taskool.Models.Usuario
+
+@{
+    ViewBag.Title = "Editar Usuarios";
+}
+
+<h2>Editar Usuarios</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Usuario</legend>
+
+        @Html.HiddenFor(model => model.id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.idInstitucion, "Institucion")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("idInstitucion", String.Empty)
+            @Html.ValidationMessageFor(model => model.idInstitucion)
+        </div>
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.nombreUsuario)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.nombreUsuario)
+            @Html.ValidationMessageFor(model => model.nombreUsuario)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.email)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.email)
+            @Html.ValidationMessageFor(model => model.email)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.estadoUsuario)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.estadoUsuario)
+            @Html.ValidationMessageFor(model => model.estadoUsuario)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.fechaRegistro)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.fechaRegistro)
+            @Html.ValidationMessageFor(model => model.fechaRegistro)
+        </div>
+
+
+        <div class="editor-field">
+        <table>
+        <tr>
+            @{
+    int cnt = 0;
+    List<Taskool.ViewModels.GruposAsignadosViewModel> grupos = ViewBag.Grupos;
+
+    foreach (var grupo in grupos)
+    {
+        if (cnt++ % 3 == 0)
+        {
+                        @:  </tr> <tr> 
+                    }
+                    @: <td> 
+                        <input type="checkbox" 
+                               name="selectedGrupos" 
+                               value="@grupo.idGrupo" 
+                               @(Html.Raw(grupo.Asignado ? "checked=\"checked\"" : "")) /> 
+                        @grupo.idGrupo @:  @grupo.Nombre
+                    @:</td>
+                }
+                @: </tr>
+            }
+    </table>
+</div>
+
+
+        <p>
+            <input type="submit" value="Guardar" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
